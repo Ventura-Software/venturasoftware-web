@@ -98,18 +98,18 @@ export default function Footer() {
               Get in Touch
             </h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <i className="ri-mail-line text-cyan-400 mt-1"></i>
+              <li className="flex items-start gap-3 align-center">
+                <i className="ri-mail-line text-cyan-400"></i>
                 <span className="text-slate-400 text-sm">
                   info@venturasoftware.dev
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <i className="ri-phone-line text-cyan-400 mt-1"></i>
-                <span className="text-slate-400 text-sm">+598 123 456 789</span>
+              <li className="flex items-start gap-3 align-center">
+                <i className="ri-phone-line text-cyan-400"></i>
+                <span className="text-slate-400 text-sm">+598 97 388 046</span>
               </li>
-              <li className="flex items-start gap-3">
-                <i className="ri-map-pin-line text-cyan-400 mt-1"></i>
+              <li className="flex items-start gap-3 align-center">
+                <i className="ri-map-pin-line text-cyan-400"></i>
                 <span className="text-slate-400 text-sm">
                   Montevideo, Uruguay
                 </span>
@@ -137,14 +137,6 @@ export default function Footer() {
                 className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
               >
                 Terms of Service
-              </a>
-              <a
-                href="https://readdy.ai/?origin=logo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
-              >
-                Powered by Readdy
               </a>
             </div>
           </div>

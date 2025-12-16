@@ -43,6 +43,7 @@ export default function Contact() {
         setSubmitStatus("error");
       }
     } catch (error) {
+      console.error(error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -90,8 +91,8 @@ export default function Contact() {
             {[
               { number: "50+", label: "Projects Delivered" },
               { number: "8+", label: "Avg Years Experience" },
-              { number: "95%", label: "Client Retention" },
-              { number: "100%", label: "Senior Team" },
+              { number: "100%", label: "On-Time Delivery" },
+              { number: "100%", label: "Success Rate" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-cyan-500 to-blue-500 bg-clip-text text-transparent mb-2">
@@ -142,7 +143,7 @@ export default function Contact() {
                     Phone
                   </div>
                   <div className="text-slate-900 font-semibold">
-                    +598 123 456 789
+                    +598 97 388 046
                   </div>
                 </div>
               </div>
