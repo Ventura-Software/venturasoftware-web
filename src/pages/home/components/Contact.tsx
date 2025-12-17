@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,31 +20,43 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
-      const formElement = e.currentTarget;
-      const formDataToSend = new FormData(formElement);
+      // EmailJS configuration - these should be set in your .env file
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      const response = await fetch(
-        "https://readdy.ai/api/form/d4s96v91e6in3mfvkd10",
+      if (!serviceId || !templateId || !publicKey) {
+        console.error(
+          "EmailJS configuration is missing. Please check your .env file."
+        );
+        setSubmitStatus("error");
+        return;
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
         {
-          method: "POST",
-          body: new URLSearchParams(formDataToSend as any),
-        }
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || "Not provided",
+          project_type: formData.projectType,
+          message: formData.message,
+          to_email: "info@venturasoftware.dev", // Your email where you'll receive the messages
+        },
+        publicKey
       );
 
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          company: "",
-          projectType: "",
-          message: "",
-        });
-      } else {
-        setSubmitStatus("error");
-      }
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        projectType: "",
+        message: "",
+      });
     } catch (error) {
-      console.error(error);
+      console.error("EmailJS error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -168,7 +181,6 @@ export default function Contact() {
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-200">
             <form
               id="contact-form"
-              data-readdy-form
               onSubmit={handleSubmit}
               className="space-y-6"
             >
