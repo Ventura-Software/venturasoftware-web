@@ -1,3 +1,5 @@
+import venturaLogo from "@/assets/images/ventura-logo.svg";
+
 export default function Footer() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -13,7 +15,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <img
-              src="https://public.readdy.ai/ai/img_res/25fc608c-f5da-4b1f-8985-bc4561935a7d.png"
+              src={venturaLogo}
               alt="Ventura Software"
               className="h-10 w-auto mb-4"
             />
