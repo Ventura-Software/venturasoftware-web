@@ -128,7 +128,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Ventura Software. All rights
               reserved.
             </p>
-            <div className="flex items-center gap-6">
+            {/* <div className="flex items-center gap-6">
               <a
                 href="#"
                 className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
@@ -141,7 +141,7 @@ export default function Footer() {
               >
                 Terms of Service
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

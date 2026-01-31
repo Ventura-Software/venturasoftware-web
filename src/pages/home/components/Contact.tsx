@@ -27,7 +27,7 @@ export default function Contact() {
 
       if (!serviceId || !templateId || !publicKey) {
         console.error(
-          "EmailJS configuration is missing. Please check your .env file."
+          "EmailJS configuration is missing. Please check your .env file.",
         );
         setSubmitStatus("error");
         return;
@@ -44,7 +44,7 @@ export default function Contact() {
           message: formData.message,
           to_email: "info@venturasoftware.dev", // Your email where you'll receive the messages
         },
-        publicKey
+        publicKey,
       );
 
       setSubmitStatus("success");
@@ -66,7 +66,7 @@ export default function Contact() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -102,10 +102,10 @@ export default function Contact() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
             {[
-              { number: "50+", label: "Projects Delivered" },
-              { number: "8+", label: "Avg Years Experience" },
-              { number: "100%", label: "On-Time Delivery" },
-              { number: "100%", label: "Success Rate" },
+              { number: "30+", label: "Projects Delivered" },
+              { number: "1000+", label: "Caffeine Consumed" },
+              { number: "100%", label: "Commitment" },
+              { number: "200%", label: "Happy Clients" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-cyan-500 to-blue-500 bg-clip-text text-transparent mb-2">

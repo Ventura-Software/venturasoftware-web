@@ -1,41 +1,45 @@
 export default function Services() {
   const services = [
     {
-      icon: 'ri-code-s-line',
-      title: 'Custom Web Applications',
-      description: 'Modern, scalable platforms built with React, Next.js, TypeScript, Node.js and NestJS.',
-      tags: ['React', 'Next.js', 'TypeScript', 'Node.js']
+      icon: "ri-rocket-line",
+      title: "End-to-End Product Development",
+      description: "From initial concept to successful launch and beyond.",
+      tags: ["Strategy", "Design", "Development", "Launch"],
     },
     {
-      icon: 'ri-smartphone-line',
-      title: 'Mobile Applications',
-      description: 'High-performance cross-platform apps using React Native.',
-      tags: ['React Native', 'iOS', 'Android', 'Cross-platform']
+      icon: "ri-code-s-line",
+      title: "Custom Web Applications",
+      description:
+        "Modern, scalable platforms built with React, Next.js, TypeScript, Node.js and NestJS.",
+      tags: ["React", "Next.js", "TypeScript", "Node.js"],
     },
     {
-      icon: 'ri-server-line',
-      title: 'SaaS Platform Development',
-      description: 'End-to-end SaaS architecture: authentication, subscriptions, payments, analytics, user roles and scalable infrastructure.',
-      tags: ['Authentication', 'Subscriptions', 'Payments', 'Analytics']
+      icon: "ri-smartphone-line",
+      title: "Mobile Applications",
+      description: "High-performance cross-platform apps using React Native.",
+      tags: ["React Native", "iOS", "Android", "Cross-platform"],
     },
     {
-      icon: 'ri-links-line',
-      title: 'API & System Integrations',
-      description: 'Secure integrations with payment systems, CRM, logistics, ticketing and AI-powered services.',
-      tags: ['Payment Systems', 'CRM', 'Logistics', 'AI Services']
+      icon: "ri-brain-line",
+      title: "AI-Enhanced Features",
+      description:
+        "OpenAI, embeddings and vector databases to improve search, automation and user experience.",
+      tags: ["OpenAI", "Embeddings", "Vector DB", "Automation"],
     },
     {
-      icon: 'ri-brain-line',
-      title: 'AI-Enhanced Features',
-      description: 'OpenAI, embeddings and vector databases to improve search, automation and user experience.',
-      tags: ['OpenAI', 'Embeddings', 'Vector DB', 'Automation']
+      icon: "ri-server-line",
+      title: "SaaS Platform Development",
+      description:
+        "End-to-end SaaS architecture: authentication, subscriptions, payments, analytics, user roles and scalable infrastructure.",
+      tags: ["Authentication", "Subscriptions", "Payments", "Analytics"],
     },
     {
-      icon: 'ri-rocket-line',
-      title: 'End-to-End Product Development',
-      description: 'From initial concept to successful launch and beyond.',
-      tags: ['Strategy', 'Design', 'Development', 'Launch']
-    }
+      icon: "ri-links-line",
+      title: "API & System Integrations",
+      description:
+        "Secure integrations with payment systems, CRM, logistics, ticketing and AI-powered services.",
+      tags: ["Payment Systems", "CRM", "Logistics", "AI Services"],
+    },
   ];
 
   return (

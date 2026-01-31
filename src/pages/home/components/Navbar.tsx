@@ -80,12 +80,14 @@ export default function Navbar({ scrolled }: NavbarProps) {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer whitespace-nowrap"
+              <a
+                href="https://calendly.com/juanpadin7/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer whitespace-nowrap inline-block"
               >
                 Get in Touch
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}

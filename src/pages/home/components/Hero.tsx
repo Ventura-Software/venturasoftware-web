@@ -33,11 +33,11 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 backdrop-blur-sm mb-8 animate-fade-in">
+        {/* <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 backdrop-blur-sm mb-8 animate-fade-in">
           <span className="text-cyan-400 text-sm font-medium">
             Trusted by 50+ companies worldwide
           </span>
-        </div>
+        </div> */}
 
         {/* Main Headline */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
@@ -63,12 +63,14 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-2xl cursor-pointer whitespace-nowrap"
+          <a
+            href="https://calendly.com/juanpadin7/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-2xl cursor-pointer whitespace-nowrap inline-block text-center"
           >
             Get in Touch
-          </button>
+          </a>
           <button
             onClick={() => scrollToSection("services")}
             className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer whitespace-nowrap"
