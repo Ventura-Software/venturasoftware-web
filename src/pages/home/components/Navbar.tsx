@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import venturaLogo from "@/assets/images/ventura-logo.svg";
 
 interface NavbarProps {
@@ -7,12 +8,39 @@ interface NavbarProps {
 
 export default function Navbar({ scrolled }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const onHome = location.pathname === "/";
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setMobileMenuOpen(false);
+  const goToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    if (onHome) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(`/#${id}`);
+      // give the home page a tick to render, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
+  const goToPortfolio = () => {
+    setMobileMenuOpen(false);
+    navigate("/portfolio");
+    window.scrollTo({ top: 0 });
+  };
+
+  const goHome = () => {
+    setMobileMenuOpen(false);
+    if (onHome) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
   };
 
@@ -26,18 +54,23 @@ export default function Navbar({ scrolled }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <div className="flex items-center">
+            <button
+              type="button"
+              onClick={goHome}
+              className="flex items-center cursor-pointer bg-transparent border-0 p-0"
+              aria-label="Go to home"
+            >
               <img
                 src={venturaLogo}
                 alt="Ventura Software"
                 className="h-14 w-auto"
               />
-            </div>
+            </button>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <button
-                onClick={() => scrollToSection("services")}
+                onClick={() => goToSection("services")}
                 className={`text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
                   scrolled
                     ? "text-slate-600 hover:text-slate-900"
@@ -47,7 +80,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 Services
               </button>
               <button
-                onClick={() => scrollToSection("process")}
+                onClick={() => goToSection("process")}
                 className={`text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
                   scrolled
                     ? "text-slate-600 hover:text-slate-900"
@@ -57,7 +90,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 Process
               </button>
               <button
-                onClick={() => scrollToSection("why-us")}
+                onClick={() => goToSection("why-us")}
                 className={`text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
                   scrolled
                     ? "text-slate-600 hover:text-slate-900"
@@ -67,7 +100,17 @@ export default function Navbar({ scrolled }: NavbarProps) {
                 Why Us
               </button>
               <button
-                onClick={() => scrollToSection("contact")}
+                onClick={goToPortfolio}
+                className={`text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
+                  scrolled
+                    ? "text-slate-600 hover:text-slate-900"
+                    : "text-slate-300 hover:text-white"
+                }`}
+              >
+                Portfolio
+              </button>
+              <button
+                onClick={() => goToSection("contact")}
                 className={`text-sm font-medium transition-colors cursor-pointer whitespace-nowrap ${
                   scrolled
                     ? "text-slate-600 hover:text-slate-900"
@@ -127,35 +170,43 @@ export default function Navbar({ scrolled }: NavbarProps) {
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
           <button
-            onClick={() => scrollToSection("services")}
+            onClick={() => goToSection("services")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
             Services
           </button>
           <button
-            onClick={() => scrollToSection("process")}
+            onClick={() => goToSection("process")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
             Process
           </button>
           <button
-            onClick={() => scrollToSection("why-us")}
+            onClick={() => goToSection("why-us")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
             Why Us
           </button>
           <button
-            onClick={() => scrollToSection("contact")}
+            onClick={goToPortfolio}
+            className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
+          >
+            Portfolio
+          </button>
+          <button
+            onClick={() => goToSection("contact")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
             About
           </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer whitespace-nowrap"
+          <a
+            href="https://calendly.com/juanpadin7/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer whitespace-nowrap inline-block"
           >
             Get in Touch
-          </button>
+          </a>
         </div>
       </div>
     </>

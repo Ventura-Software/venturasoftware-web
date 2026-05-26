@@ -1,0 +1,715 @@
+/* Portfolio / Success Stories page — adapted from the original ventura.html
+   into React. Same visual language, but the section layout is responsive:
+   1280px+ keeps the original 1280×800 frame, smaller viewports stack the
+   stage above the info and reduce the device-mockup scale. */
+
+.portfolio-root {
+  --font-display: "Space Grotesk", "Inter", -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --font-body: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+.portfolio-root a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== PDF button (floating) ===== */
+.portfolio-pdf-btn {
+  position: fixed;
+  top: 88px;
+  right: 24px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.portfolio-pdf-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18);
+}
+.portfolio-pdf-btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* ===== Section frame ===== */
+.portfolio-section {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .portfolio-section {
+    height: 800px;
+  }
+}
+.portfolio-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><g fill='white' opacity='0.07'><circle cx='40' cy='60' r='1.6'/><circle cx='180' cy='120' r='1.2'/><circle cx='320' cy='80' r='1.8'/><circle cx='460' cy='160' r='1.2'/><circle cx='540' cy='40' r='1.6'/><circle cx='100' cy='260' r='1.4'/><circle cx='260' cy='320' r='1.2'/><circle cx='400' cy='280' r='1.6'/><circle cx='520' cy='360' r='1.2'/><circle cx='60' cy='460' r='1.4'/><circle cx='200' cy='500' r='1.6'/><circle cx='340' cy='460' r='1.2'/><circle cx='480' cy='540' r='1.8'/></g><g stroke='white' stroke-width='0.5' opacity='0.06' fill='none'><path d='M40 60 L180 120 L320 80 L460 160 L540 40'/><path d='M100 260 L260 320 L400 280 L520 360'/><path d='M60 460 L200 500 L340 460 L480 540'/><path d='M180 120 L260 320'/><path d='M460 160 L400 280'/><path d='M260 320 L340 460'/></g></svg>");
+  background-size: 600px 600px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* ===== Hero ===== */
+.portfolio-hero {
+  background: radial-gradient(120% 80% at 80% 20%, #1e2a4a 0%, #111a2d 60%);
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .portfolio-hero {
+    padding: 120px 96px 80px;
+  }
+}
+.portfolio-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 9vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: #2bbff2;
+  margin: 0 0 24px;
+}
+.portfolio-hero .tag {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 840px;
+  line-height: 1.4;
+  margin: 0 auto;
+}
+.portfolio-hero .eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2bbff2;
+  margin-bottom: 24px;
+}
+.portfolio-hero .meta {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+.portfolio-hero .meta > div {
+  flex: 1 1 140px;
+}
+.portfolio-hero .meta strong {
+  display: block;
+  color: #ffffff;
+  font-size: clamp(24px, 4vw, 36px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+/* ===== Project section layout ===== */
+.portfolio-project {
+  padding: 0;
+  flex-direction: column;
+}
+@media (min-width: 1024px) {
+  .portfolio-project {
+    flex-direction: row;
+  }
+}
+.portfolio-project .stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  flex-shrink: 0;
+}
+@media (min-width: 1024px) {
+  .portfolio-project .stage {
+    width: 55%;
+    height: 100%;
+  }
+}
+.portfolio-project .info {
+  position: relative;
+  width: 100%;
+  padding: 48px 24px 64px;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .portfolio-project .info {
+    padding: 64px 80px 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .portfolio-project .info {
+    width: 45%;
+    padding: 0 80px 0 24px;
+  }
+}
+.portfolio-project .year {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.portfolio-project .year::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.portfolio-project h2 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0 0 28px;
+}
+.portfolio-project p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 16px;
+  max-width: 520px;
+}
+.portfolio-project .tech {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 520px;
+}
+.portfolio-project .chip {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+}
+.portfolio-project .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.85;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 4px;
+}
+.portfolio-project .link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.portfolio-type-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .portfolio-type-badge {
+    top: 64px;
+    right: 80px;
+  }
+}
+@media (min-width: 1024px) {
+  .portfolio-type-badge {
+    top: 0;
+    right: 80px;
+  }
+}
+.portfolio-type-badge svg {
+  width: 16px;
+  height: 16px;
+}
+.portfolio-type-badge .platform-logo {
+  height: 16px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== Device mockups ===== */
+.portfolio-device {
+  position: absolute;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45));
+}
+
+/* TicketTwist custom asset */
+.portfolio-tt-apps {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 82%;
+  max-width: 90%;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.6));
+}
+
+/* Road Scholar — two parallel diagonal phones */
+.portfolio-rs-apps {
+  position: absolute;
+  width: 48%;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+.portfolio-rs-apps.one {
+  top: 14%;
+  left: 6%;
+  transform: rotate(-14deg);
+  z-index: 1;
+}
+.portfolio-rs-apps.two {
+  top: 28%;
+  left: 38%;
+  transform: rotate(-14deg);
+  z-index: 2;
+}
+
+/* Walo — four overlapping phones */
+.portfolio-wl-phone {
+  position: absolute;
+  width: 38%;
+  max-width: 270px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #0f172a;
+  border: 7px solid #1c2128;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+.portfolio-wl-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.portfolio-wl-phone.one {
+  top: 10%;
+  left: -8%;
+  z-index: 1;
+}
+.portfolio-wl-phone.two {
+  top: 4%;
+  left: 18%;
+  z-index: 3;
+}
+.portfolio-wl-phone.three {
+  top: 36%;
+  left: 32%;
+  z-index: 4;
+}
+.portfolio-wl-phone.four {
+  top: 26%;
+  left: 54%;
+  z-index: 2;
+}
+
+/* BuildFeed — three diagonal phones */
+.portfolio-bf-phone {
+  position: absolute;
+  width: 34%;
+  max-width: 240px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #0f172a;
+  border: 6px solid #1c2128;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
+}
+.portfolio-bf-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.portfolio-bf-phone.one {
+  top: 5%;
+  left: 8%;
+  z-index: 1;
+}
+.portfolio-bf-phone.two {
+  top: 22%;
+  left: 32%;
+  z-index: 3;
+}
+.portfolio-bf-phone.three {
+  top: 38%;
+  left: 56%;
+  z-index: 2;
+}
+
+/* TuVianda custom asset */
+.portfolio-tv-apps {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 90%;
+  max-width: 95%;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.55));
+}
+
+/* Pet Cloud custom asset */
+.portfolio-pc-apps {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 85%;
+  max-width: 90%;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.55));
+}
+
+/* ===== PDF render container =====
+   Positioned in normal flow but pushed off-screen via top.
+   Stays fully rendered with real layout for html2canvas. */
+.portfolio-pdf-root {
+  position: absolute;
+  top: -100000px;
+  left: 0;
+  width: 794px;
+  background: #0f172a;
+}
+.portfolio-pdf-root .page {
+  width: 794px;
+  height: 1123px;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  overflow: hidden;
+}
+.portfolio-pdf-root .card {
+  width: 794px;
+  height: 561px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.portfolio-pdf-root .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><g fill='white' opacity='0.07'><circle cx='40' cy='60' r='1.6'/><circle cx='180' cy='120' r='1.2'/><circle cx='320' cy='80' r='1.8'/><circle cx='460' cy='160' r='1.2'/><circle cx='540' cy='40' r='1.6'/><circle cx='100' cy='260' r='1.4'/><circle cx='260' cy='320' r='1.2'/><circle cx='400' cy='280' r='1.6'/><circle cx='520' cy='360' r='1.2'/></g><g stroke='white' stroke-width='0.5' opacity='0.06' fill='none'><path d='M40 60 L180 120 L320 80 L460 160 L540 40'/><path d='M100 260 L260 320 L400 280 L520 360'/></g></svg>");
+  background-size: 480px 480px;
+  pointer-events: none;
+}
+.portfolio-pdf-root .about-card {
+  background: radial-gradient(120% 80% at 80% 20%, #1e2a4a 0%, #111a2d 60%);
+}
+.portfolio-pdf-root .about-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.portfolio-pdf-root .about-stat {
+  min-width: 110px;
+}
+.portfolio-pdf-root .about-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+.portfolio-pdf-root .about-stat span {
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+}
+.portfolio-pdf-root .closing-card {
+  background: radial-gradient(120% 80% at 20% 80%, #1e2a4a 0%, #111a2d 60%);
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-pdf-root .closing-card .closing-mark {
+  position: absolute;
+  left: 50px;
+  bottom: 24px;
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: rgba(43, 191, 242, 0.18);
+  pointer-events: none;
+}
+.portfolio-pdf-root .closing-card .closing-eyebrow {
+  color: #2bbff2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+.portfolio-pdf-root .closing-card h2 {
+  color: #ffffff;
+  font-size: 32px;
+  max-width: 620px;
+  margin-top: 6px;
+  line-height: 1.1;
+}
+.portfolio-pdf-root .closing-card h2 .accent {
+  color: #2bbff2;
+}
+.portfolio-pdf-root .closing-card .closing-body {
+  font-size: 12px;
+  max-width: 620px;
+  margin-top: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+.portfolio-pdf-root .closing-card .closing-contact {
+  margin-top: 22px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.portfolio-pdf-root .closing-card .closing-contact a {
+  color: #2bbff2;
+  text-decoration: none;
+  font-weight: 600;
+}
+.portfolio-pdf-root .closing-card .closing-contact span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+.portfolio-pdf-root .pdf-corner-logo {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 30px;
+  height: auto;
+  z-index: 5;
+}
+.portfolio-pdf-root .stage {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+}
+.portfolio-pdf-root .info {
+  position: relative;
+  width: 50%;
+  padding: 40px 44px 40px 16px;
+  z-index: 2;
+}
+.portfolio-pdf-root .year {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.portfolio-pdf-root .year::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.portfolio-pdf-root h2 {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.portfolio-pdf-root p {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 10px;
+  max-width: 360px;
+}
+.portfolio-pdf-root .tech {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 360px;
+}
+.portfolio-pdf-root .chip {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.portfolio-pdf-root .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.9;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 3px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.portfolio-pdf-root .link svg {
+  width: 11px;
+  height: 11px;
+}
+.portfolio-pdf-root .type-badge {
+  position: absolute;
+  top: 32px;
+  right: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.portfolio-pdf-root .type-badge svg {
+  width: 12px;
+  height: 12px;
+}
+.portfolio-pdf-root .type-badge .platform-logo {
+  height: 12px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+/* PDF-specific device scaling overrides */
+.portfolio-pdf-root .portfolio-tt-apps {
+  height: 72%;
+  max-width: 92%;
+}
+.portfolio-pdf-root .portfolio-rs-apps {
+  width: 56%;
+}
+.portfolio-pdf-root .portfolio-rs-apps.one {
+  top: 18%;
+  left: 4%;
+}
+.portfolio-pdf-root .portfolio-rs-apps.two {
+  top: 40%;
+  left: 40%;
+}
+.portfolio-pdf-root .portfolio-wl-phone {
+  width: 145px;
+  border-radius: 18px;
+  border-width: 5px;
+}
+.portfolio-pdf-root .portfolio-wl-phone.one {
+  top: 10%;
+  left: -12%;
+}
+.portfolio-pdf-root .portfolio-wl-phone.two {
+  top: 4%;
+  left: 16%;
+}
+.portfolio-pdf-root .portfolio-wl-phone.three {
+  top: 38%;
+  left: 28%;
+}
+.portfolio-pdf-root .portfolio-wl-phone.four {
+  top: 28%;
+  left: 56%;
+}
+.portfolio-pdf-root .portfolio-bf-phone {
+  width: 140px;
+  border-radius: 22px;
+  border-width: 5px;
+}
+.portfolio-pdf-root .portfolio-bf-phone.one {
+  top: 4%;
+  left: 8%;
+}
+.portfolio-pdf-root .portfolio-bf-phone.two {
+  top: 22%;
+  left: 30%;
+}
+.portfolio-pdf-root .portfolio-bf-phone.three {
+  top: 42%;
+  left: 52%;
+}
+.portfolio-pdf-root .portfolio-tv-apps {
+  height: auto;
+  width: 98%;
+  max-width: 98%;
+  max-height: 98%;
+}
+.portfolio-pdf-root .portfolio-pc-apps {
+  height: 80%;
+  max-width: 80%;
+}
