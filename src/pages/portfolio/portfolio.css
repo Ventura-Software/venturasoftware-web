@@ -53,11 +53,12 @@
   cursor: progress;
 }
 
-/* ===== Section frame ===== */
+/* ===== Section frame =====
+   Each section spans the full viewport width (so its background fills the
+   screen); the content is kept within 1280px by the section's own padding. */
 .portfolio-section {
+  --section-gutter: max(0px, calc((100% - 1280px) / 2));
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -152,6 +153,7 @@
 @media (min-width: 1024px) {
   .portfolio-project {
     flex-direction: row;
+    padding-inline: var(--section-gutter);
   }
 }
 .portfolio-project .stage {
