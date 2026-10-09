@@ -1,9 +1,11 @@
 import { forwardRef } from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { PROJECTS, type Project } from "../data";
 import DeviceStage from "./DeviceStage";
 import { LinkIcon, TypeBadge } from "./icons";
 
 function PdfProjectCard({ project }: { project: Project }) {
+  const { t } = useTranslation();
   const gradient = `linear-gradient(135deg, ${project.color} 0%, ${
     project.secondaryColor || project.color
   } 100%)`;
@@ -19,10 +21,12 @@ function PdfProjectCard({ project }: { project: Project }) {
       </div>
       <div className="info">
         <TypeBadge type={project.type} className="type-badge" />
-        <div className="year">{project.year}</div>
+        <div className="year">
+          {project.year.replace("Present", t("portfolio.present"))}
+        </div>
         <h2>{project.title}</h2>
-        <p>{project.text1}</p>
-        <p>{project.text2}</p>
+        <p>{t(`projects.${project.id}.text1`)}</p>
+        <p>{t(`projects.${project.id}.text2`)}</p>
         <div className="tech">
           {project.tech.map((t) => (
             <span key={t} className="chip">
@@ -46,6 +50,7 @@ function PdfProjectCard({ project }: { project: Project }) {
 }
 
 function AboutCard() {
+  const { t } = useTranslation();
   return (
     <div className="card about-card">
       <img
@@ -55,7 +60,7 @@ function AboutCard() {
       />
       <div className="info" style={{ width: "100%", padding: "36px 56px" }}>
         <div className="year" style={{ color: "#2bbff2", opacity: 1 }}>
-          Ventura Software · Success Stories
+          {t("portfolio.pdf.aboutEyebrow")}
         </div>
         <h2 style={{ fontSize: 38, maxWidth: 680, color: "#2bbff2" }}>
           Ventura Software
@@ -68,28 +73,24 @@ function AboutCard() {
             lineHeight: 1.55,
           }}
         >
-          Ventura Software is a boutique engineering studio focused on
-          delivering reliable, scalable and high-quality digital products. We
-          partner with founders and product teams to ship mobile and web
-          software end-to-end — from architecture and integrations to release
-          management. What follows is a brief tour of the projects we've built.
+          {t("portfolio.pdf.aboutBody")}
         </p>
         <div className="about-stats">
           <div className="about-stat">
             <strong>30+</strong>
-            <span>Projects Delivered</span>
+            <span>{t("stats.projects")}</span>
           </div>
           <div className="about-stat">
             <strong>1000+</strong>
-            <span>Caffeine Consumed</span>
+            <span>{t("stats.caffeine")}</span>
           </div>
           <div className="about-stat">
             <strong>100%</strong>
-            <span>Commitment</span>
+            <span>{t("stats.commitment")}</span>
           </div>
           <div className="about-stat">
             <strong>200%</strong>
-            <span>Happy Clients</span>
+            <span>{t("stats.happyClients")}</span>
           </div>
         </div>
       </div>
@@ -98,6 +99,7 @@ function AboutCard() {
 }
 
 function ClosingCard() {
+  const { t } = useTranslation();
   return (
     <div className="card closing-card">
       <img
@@ -106,20 +108,19 @@ function ClosingCard() {
         alt="Ventura"
       />
       <div className="info" style={{ width: "100%", padding: "36px 56px" }}>
-        <div className="closing-eyebrow">What's next</div>
+        <div className="closing-eyebrow">{t("portfolio.pdf.closingEyebrow")}</div>
         <h2>
-          Let's build the <span className="accent">next great product</span>{" "}
-          together.
+          <Trans
+            i18nKey="portfolio.pdf.closingTitle"
+            components={{ accent: <span className="accent" /> }}
+          />
         </h2>
         <p className="closing-body">
-          The next success story on these pages could be yours. Whether you're
-          shaping a new idea, scaling an existing product, or rescuing a project
-          that's stalled — Ventura partners with founders and product teams to
-          ship software that lasts. We'd love to hear what you're working on.
+          {t("portfolio.pdf.closingBody")}
         </p>
         <div className="closing-contact">
           <div>
-            <span>Web</span>
+            <span>{t("portfolio.pdf.web")}</span>
             <a
               href="https://www.venturasoftware.dev/"
               target="_blank"
@@ -129,14 +130,14 @@ function ClosingCard() {
             </a>
           </div>
           <div>
-            <span>Email</span>
+            <span>{t("portfolio.pdf.email")}</span>
             <a href="mailto:info@venturasoftware.dev">
               info@venturasoftware.dev
             </a>
           </div>
         </div>
       </div>
-      <div className="closing-mark">Thank you.</div>
+      <div className="closing-mark">{t("portfolio.pdf.thankYou")}</div>
     </div>
   );
 }
@@ -144,7 +145,7 @@ function ClosingCard() {
 const PdfRoot = forwardRef<HTMLDivElement>((_, ref) => {
   const cards = [
     <AboutCard key="about" />,
-    ...PROJECTS.map((p) => <PdfProjectCard key={p.title} project={p} />),
+    ...PROJECTS.map((p) => <PdfProjectCard key={p.id} project={p} />),
     <ClosingCard key="closing" />,
   ];
 

@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import venturaLogo from "@/assets/images/ventura-logo.svg";
+import LanguageSwitcher, { MobileLanguageSwitcher } from "./LanguageSwitcher";
 
 interface NavbarProps {
   scrolled: boolean;
 }
 
 export default function Navbar({ scrolled }: NavbarProps) {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -58,7 +61,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
               type="button"
               onClick={goHome}
               className="flex items-center cursor-pointer bg-transparent border-0 p-0"
-              aria-label="Go to home"
+              aria-label={t("nav.goHome")}
             >
               <img
                 src={venturaLogo}
@@ -77,7 +80,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                Services
+                {t("nav.services")}
               </button>
               <button
                 onClick={() => goToSection("process")}
@@ -87,7 +90,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                Process
+                {t("nav.process")}
               </button>
               <button
                 onClick={() => goToSection("why-us")}
@@ -97,7 +100,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                Why Us
+                {t("nav.whyUs")}
               </button>
               <button
                 onClick={goToPortfolio}
@@ -107,7 +110,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                Portfolio
+                {t("nav.portfolio")}
               </button>
               <button
                 onClick={() => goToSection("contact")}
@@ -117,19 +120,20 @@ export default function Navbar({ scrolled }: NavbarProps) {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                About
+                {t("nav.about")}
               </button>
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* Language + CTA Button */}
+            <div className="hidden md:flex items-center gap-6">
+              <LanguageSwitcher scrolled={scrolled} />
               <a
                 href="https://calendly.com/juanpadin7/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer whitespace-nowrap inline-block"
               >
-                Get in Touch
+                {t("nav.getInTouch")}
               </a>
             </div>
 
@@ -137,6 +141,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 cursor-pointer"
+              aria-label={t("nav.menu")}
             >
               <div className="w-6 h-5 flex flex-col justify-between">
                 <span
@@ -173,31 +178,31 @@ export default function Navbar({ scrolled }: NavbarProps) {
             onClick={() => goToSection("services")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            Services
+            {t("nav.services")}
           </button>
           <button
             onClick={() => goToSection("process")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            Process
+            {t("nav.process")}
           </button>
           <button
             onClick={() => goToSection("why-us")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            Why Us
+            {t("nav.whyUs")}
           </button>
           <button
             onClick={goToPortfolio}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            Portfolio
+            {t("nav.portfolio")}
           </button>
           <button
             onClick={() => goToSection("contact")}
             className="text-2xl font-semibold text-white hover:text-cyan-400 transition-colors cursor-pointer"
           >
-            About
+            {t("nav.about")}
           </button>
           <a
             href="https://calendly.com/juanpadin7/30min"
@@ -205,8 +210,9 @@ export default function Navbar({ scrolled }: NavbarProps) {
             rel="noopener noreferrer"
             className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-lg font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-lg cursor-pointer whitespace-nowrap inline-block"
           >
-            Get in Touch
+            {t("nav.getInTouch")}
           </a>
+          <MobileLanguageSwitcher />
         </div>
       </div>
     </>

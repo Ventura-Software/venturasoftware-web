@@ -1,41 +1,21 @@
+import { useTranslation } from "react-i18next";
+
 export default function WhyWorkWithUs() {
+  const { t } = useTranslation();
   const reasons = [
-    {
-      number: '01',
-      title: 'Bilingual Team',
-      description: 'Clear, fluent communication in English and Spanish for smooth collaboration.'
-    },
-    {
-      number: '02',
-      title: 'Meet Your Developer',
-      description: 'Clients can meet and interview the assigned engineer to confirm technical and cultural alignment.'
-    },
-    {
-      number: '03',
-      title: 'Reliable Support',
-      description: 'We provide consistent engineering capacity with optional PM and QA when needed.'
-    },
-    {
-      number: '04',
-      title: 'Low Rotation',
-      description: 'Stable long-term team that reduces onboarding overhead and ensures continuity.'
-    },
-    {
-      number: '05',
-      title: 'Qualified Talent Pool',
-      description: 'Senior engineers experienced in React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL and cloud integrations.'
-    },
-    {
-      number: '06',
-      title: 'Professional Work Ethic',
-      description: 'Transparency, ownership, accountability and high communication standards.'
-    },
-    {
-      number: '07',
-      title: 'Business Mindset',
-      description: 'We think beyond code: product, monetization, scalability and ROI are part of the process.'
-    }
-  ];
+    "bilingual",
+    "meet",
+    "support",
+    "rotation",
+    "talent",
+    "ethic",
+    "business",
+  ].map((id, index) => ({
+    id,
+    number: String(index + 1).padStart(2, "0"),
+    title: t(`whyUs.items.${id}.title`),
+    description: t(`whyUs.items.${id}.description`),
+  }));
 
   return (
     <section id="why-us" className="py-24 md:py-32 bg-slate-50">
@@ -44,16 +24,16 @@ export default function WhyWorkWithUs() {
           {/* Left Column - Sticky Header */}
           <div className="lg:col-span-2 lg:sticky lg:top-32 lg:self-start">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight mb-6">
-              Why Work With Ventura Software
+              {t("whyUs.title")}
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
           </div>
 
           {/* Right Column - Cards */}
           <div className="lg:col-span-3 space-y-6">
-            {reasons.map((reason, index) => (
+            {reasons.map((reason) => (
               <div
-                key={index}
+                key={reason.id}
                 className="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-cyan-500/30 hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-start gap-6">

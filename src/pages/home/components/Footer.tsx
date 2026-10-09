@@ -1,7 +1,9 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import venturaLogo from "@/assets/images/ventura-logo.svg";
 
 export default function Footer() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const onHome = location.pathname === "/";
@@ -33,8 +35,7 @@ export default function Footer() {
               className="h-10 w-auto mb-4"
             />
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Building exceptional digital products with senior engineering
-              teams.
+              {t("footer.tagline")}
             </p>
 
             {/* Social Icons */}
@@ -70,7 +71,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              Quick Links
+              {t("footer.quickLinks")}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -78,7 +79,7 @@ export default function Footer() {
                   onClick={() => scrollToSection("services")}
                   className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
                 >
-                  Services
+                  {t("nav.services")}
                 </button>
               </li>
               <li>
@@ -86,7 +87,7 @@ export default function Footer() {
                   onClick={() => scrollToSection("process")}
                   className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
                 >
-                  Process
+                  {t("nav.process")}
                 </button>
               </li>
               <li>
@@ -94,7 +95,7 @@ export default function Footer() {
                   onClick={() => scrollToSection("why-us")}
                   className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
                 >
-                  Why Us
+                  {t("nav.whyUs")}
                 </button>
               </li>
               <li>
@@ -102,7 +103,7 @@ export default function Footer() {
                   onClick={() => scrollToSection("contact")}
                   className="text-slate-400 hover:text-cyan-400 transition-colors text-sm cursor-pointer"
                 >
-                  Contact
+                  {t("nav.contact")}
                 </button>
               </li>
             </ul>
@@ -111,7 +112,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              Get in Touch
+              {t("footer.getInTouch")}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 align-center">
@@ -138,8 +139,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-slate-400 text-sm">
-              © {new Date().getFullYear()} Ventura Software. All rights
-              reserved.
+              {t("footer.rights", { year: new Date().getFullYear() })}
             </p>
             {/* <div className="flex items-center gap-6">
               <a

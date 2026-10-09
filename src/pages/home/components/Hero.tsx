@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function Hero() {
+  const { t } = useTranslation();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -44,7 +47,7 @@ export default function Hero() {
           Ventura Software
           <br />
           <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            End-to-End Software Engineering
+            {t("hero.tagline")}
           </span>
         </h1>
 
@@ -53,9 +56,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
           style={{ animationDelay: "0.2s" }}
         >
-          We design, build and scale high-quality digital products with a senior
-          engineering team focused on clarity, reliability and excellent
-          execution.
+          {t("hero.subtitle")}
         </p>
 
         {/* CTA Buttons */}
@@ -69,13 +70,13 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-2xl cursor-pointer whitespace-nowrap inline-block text-center"
           >
-            Get in Touch
+            {t("nav.getInTouch")}
           </a>
           <button
             onClick={() => scrollToSection("services")}
             className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer whitespace-nowrap"
           >
-            Our Services
+            {t("hero.ourServices")}
           </button>
         </div>
       </div>

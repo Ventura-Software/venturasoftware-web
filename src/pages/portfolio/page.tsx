@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Navbar from "../home/components/Navbar";
 import Footer from "../home/components/Footer";
 import ProjectSection from "./components/ProjectSection";
@@ -8,6 +9,7 @@ import { generatePortfolioPdf } from "./pdf";
 import "./portfolio.css";
 
 export default function PortfolioPage() {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(true); // always "scrolled" — page bg is dark
   const [generating, setGenerating] = useState(false);
   const pdfRootRef = useRef<HTMLDivElement>(null);
@@ -26,8 +28,9 @@ export default function PortfolioPage() {
     } catch (err) {
       console.error("PDF generation failed:", err);
       alert(
-        "PDF generation failed: " +
-          (err instanceof Error ? err.message : String(err))
+        t("portfolio.pdfError", {
+          message: err instanceof Error ? err.message : String(err),
+        })
       );
     } finally {
       setGenerating(false);
@@ -58,22 +61,18 @@ export default function PortfolioPage() {
           <polyline points="7 10 12 15 17 10" />
           <line x1="12" y1="15" x2="12" y2="3" />
         </svg>
-        {generating ? "Preparing…" : "Download PDF"}
+        {generating ? t("portfolio.preparing") : t("portfolio.downloadPdf")}
       </button>
 
       <main>
         <section className="portfolio-section portfolio-hero">
-          <div className="eyebrow">Ventura Software · Portfolio</div>
-          <h1>Success Stories</h1>
-          <div className="tag">
-            A selection of the products we've shipped — from mobile apps to
-            full-stack platforms. Each one is a real partnership with founders
-            and product teams who trusted us to build something that lasts.
-          </div>
+          <div className="eyebrow">{t("portfolio.eyebrow")}</div>
+          <h1>{t("portfolio.title")}</h1>
+          <div className="tag">{t("portfolio.intro")}</div>
         </section>
 
         {PROJECTS.map((p) => (
-          <ProjectSection key={p.title} project={p} />
+          <ProjectSection key={p.id} project={p} />
         ))}
       </main>
 

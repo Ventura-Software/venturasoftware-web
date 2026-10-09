@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import waloPilatesImg from "@/assets/images/walo-pilates.png";
 import bethelSpaImg from "@/assets/images/bethel-spa.png";
 import aypSoftImg from "@/assets/images/ayp-soft.png";
@@ -6,6 +7,7 @@ import tuViandaImg from "@/assets/images/tu-vianda.png";
 import ticketTwistImg from "@/assets/images/ticket-twist.png";
 
 export default function TrustedBy() {
+  const { t } = useTranslation();
   const partners = [
     {
       name: "Walo Pilates",
@@ -101,7 +103,7 @@ export default function TrustedBy() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <p className="text-center text-xs font-semibold text-slate-500 tracking-widest uppercase mb-12">
-          Trusted By
+          {t("trustedBy.title")}
         </p>
 
         <div className="carousel-wrapper">

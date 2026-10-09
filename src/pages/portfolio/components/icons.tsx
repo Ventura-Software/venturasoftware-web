@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { ProjectType } from "../data";
 
 export const LinkIcon = () => (
@@ -74,12 +75,13 @@ interface TypeBadgeProps {
 }
 
 export function TypeBadge({ type, className }: TypeBadgeProps) {
+  const { t } = useTranslation();
   const cls = className || "portfolio-type-badge";
   if (type === "web") {
     return (
       <div className={cls}>
         <MonitorIcon />
-        <span>Web</span>
+        <span>{t("portfolio.typeWeb")}</span>
       </div>
     );
   }
@@ -87,7 +89,7 @@ export function TypeBadge({ type, className }: TypeBadgeProps) {
     return (
       <div className={cls}>
         <BothIcon />
-        <span>Mobile · Web</span>
+        <span>{t("portfolio.typeBoth")}</span>
       </div>
     );
   }

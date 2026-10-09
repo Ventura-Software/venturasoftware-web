@@ -1,48 +1,21 @@
+import { useTranslation } from "react-i18next";
+
 export default function Process() {
+  const { t } = useTranslation();
   const steps = [
-    {
-      number: '01',
-      icon: 'ri-compass-3-line',
-      title: 'Discovery',
-      description: 'Requirements gathering, market research, and strategic planning to align on goals.',
-      duration: '1-2 weeks'
-    },
-    {
-      number: '02',
-      icon: 'ri-pencil-ruler-2-line',
-      title: 'UI/UX Design',
-      description: 'Wireframes, interactive prototypes, and comprehensive design systems.',
-      duration: '2-3 weeks'
-    },
-    {
-      number: '03',
-      icon: 'ri-code-box-line',
-      title: 'Development',
-      description: 'Agile sprints with code reviews, automated testing, and continuous integration.',
-      duration: '6-12 weeks'
-    },
-    {
-      number: '04',
-      icon: 'ri-checkbox-circle-line',
-      title: 'QA & Testing',
-      description: 'Comprehensive testing including automated tests, manual QA, and performance optimization.',
-      duration: '1-2 weeks'
-    },
-    {
-      number: '05',
-      icon: 'ri-rocket-2-line',
-      title: 'Launch',
-      description: 'Deployment to production, monitoring setup, and performance optimization.',
-      duration: '1 week'
-    },
-    {
-      number: '06',
-      icon: 'ri-line-chart-line',
-      title: 'Support & Growth',
-      description: 'Ongoing maintenance, feature updates, and scaling as your business grows.',
-      duration: 'Ongoing'
-    }
-  ];
+    { id: "discovery", icon: "ri-compass-3-line" },
+    { id: "design", icon: "ri-pencil-ruler-2-line" },
+    { id: "development", icon: "ri-code-box-line" },
+    { id: "qa", icon: "ri-checkbox-circle-line" },
+    { id: "launch", icon: "ri-rocket-2-line" },
+    { id: "support", icon: "ri-line-chart-line" },
+  ].map((step, index) => ({
+    ...step,
+    number: String(index + 1).padStart(2, "0"),
+    title: t(`process.steps.${step.id}.title`),
+    description: t(`process.steps.${step.id}.description`),
+    duration: t(`process.steps.${step.id}.duration`),
+  }));
 
   return (
     <section id="process" className="py-24 md:py-32 bg-slate-900 relative overflow-hidden">
@@ -53,13 +26,13 @@ export default function Process() {
         {/* Section Header */}
         <div className="text-center mb-20">
           <p className="text-xs font-semibold text-cyan-400 tracking-widest uppercase mb-4">
-            Our Process
+            {t("process.eyebrow")}
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            End-to-End Development
+            {t("process.title")}
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            A proven methodology that takes your product from concept to launch
+            {t("process.subtitle")}
           </p>
         </div>
 
@@ -67,7 +40,7 @@ export default function Process() {
         <div className="space-y-12 md:space-y-16">
           {steps.map((step, index) => (
             <div
-              key={index}
+              key={step.id}
               className={`flex flex-col md:flex-row items-center gap-8 ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
@@ -80,7 +53,7 @@ export default function Process() {
                   }`}
                 >
                   <span className="inline-block text-xs font-semibold text-cyan-400 tracking-widest uppercase mb-2">
-                    STEP {step.number}
+                    {t("process.step", { number: step.number })}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                     {step.title}
