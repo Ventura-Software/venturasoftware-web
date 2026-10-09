@@ -1,10 +1,50 @@
-import type { Project } from "../data";
+import type { Project, Screen } from "../data";
 
 interface Props {
   project: Project;
 }
 
+function ScreenFrame({ screen }: { screen: Screen }) {
+  const style = {
+    top: `${screen.top}%`,
+    left: `${screen.left}%`,
+    width: `${screen.width}%`,
+    zIndex: screen.z,
+  };
+
+  if (screen.device === "phone") {
+    return (
+      <div className="portfolio-phone" style={style}>
+        <img src={screen.src} alt={screen.alt} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="portfolio-browser" style={style}>
+      <div className="bar">
+        <span />
+        <span />
+        <span />
+      </div>
+      <img src={screen.src} alt={screen.alt} />
+    </div>
+  );
+}
+
 export default function DeviceStage({ project }: Props) {
+  if (project.screens) {
+    return (
+      <div className="portfolio-canvas-box">
+        <div className="portfolio-canvas">
+          {project.screens.map((s) => (
+            <ScreenFrame key={s.src} screen={s} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (project.title === "TicketTwist") {
     return (
       <img
@@ -65,25 +105,6 @@ export default function DeviceStage({ project }: Props) {
         src="/portfolio/tuvianda.svg"
         alt="TuVianda app screens"
       />
-    );
-  }
-
-  if (project.title === "Walo") {
-    return (
-      <>
-        <div className="portfolio-wl-phone one">
-          <img src="/portfolio/walo-1.jpeg" alt="Walo screen 1" />
-        </div>
-        <div className="portfolio-wl-phone two">
-          <img src="/portfolio/walo-2.jpeg" alt="Walo screen 2" />
-        </div>
-        <div className="portfolio-wl-phone three">
-          <img src="/portfolio/walo-3.jpeg" alt="Walo screen 3" />
-        </div>
-        <div className="portfolio-wl-phone four">
-          <img src="/portfolio/walo-4.jpeg" alt="Walo screen 4" />
-        </div>
-      </>
     );
   }
 

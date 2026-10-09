@@ -325,41 +325,55 @@
   z-index: 2;
 }
 
-/* Walo — four overlapping phones */
-.portfolio-wl-phone {
+/* Data-driven screens (Project.screens) — browser windows and phones laid
+   out on a square canvas. The canvas is the largest square that fits the
+   stage; sizes inside use cqw so they scale with it on the page and in PDF. */
+.portfolio-canvas-box {
   position: absolute;
-  width: 38%;
-  max-width: 270px;
-  border-radius: 32px;
-  overflow: hidden;
-  background: #0f172a;
-  border: 7px solid #1c2128;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  inset: 0;
+  container-type: size;
 }
-.portfolio-wl-phone img {
+.portfolio-canvas {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(92cqw, 92cqh);
+  height: min(92cqw, 92cqh);
+  container-type: inline-size;
+}
+.portfolio-browser,
+.portfolio-phone {
+  position: absolute;
+  overflow: hidden;
+  box-shadow: 0 4cqw 8cqw rgba(0, 0, 0, 0.5);
+}
+.portfolio-browser img,
+.portfolio-phone img {
   display: block;
   width: 100%;
   height: auto;
 }
-.portfolio-wl-phone.one {
-  top: 10%;
-  left: -8%;
-  z-index: 1;
+.portfolio-browser {
+  border-radius: 1.4cqw;
+  background: #1c2128;
 }
-.portfolio-wl-phone.two {
-  top: 4%;
-  left: 18%;
-  z-index: 3;
+.portfolio-browser .bar {
+  height: 3cqw;
+  display: flex;
+  align-items: center;
+  gap: 0.7cqw;
+  padding: 0 1.4cqw;
 }
-.portfolio-wl-phone.three {
-  top: 36%;
-  left: 32%;
-  z-index: 4;
+.portfolio-browser .bar span {
+  width: 0.9cqw;
+  height: 0.9cqw;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
 }
-.portfolio-wl-phone.four {
-  top: 26%;
-  left: 54%;
-  z-index: 2;
+.portfolio-phone {
+  border-radius: 3.6cqw;
+  background: #0f172a;
+  border: 1.1cqw solid #1c2128;
 }
 
 /* BuildFeed — three diagonal phones */
@@ -669,27 +683,6 @@
 .portfolio-pdf-root .portfolio-rs-apps.two {
   top: 40%;
   left: 40%;
-}
-.portfolio-pdf-root .portfolio-wl-phone {
-  width: 145px;
-  border-radius: 18px;
-  border-width: 5px;
-}
-.portfolio-pdf-root .portfolio-wl-phone.one {
-  top: 10%;
-  left: -12%;
-}
-.portfolio-pdf-root .portfolio-wl-phone.two {
-  top: 4%;
-  left: 16%;
-}
-.portfolio-pdf-root .portfolio-wl-phone.three {
-  top: 38%;
-  left: 28%;
-}
-.portfolio-pdf-root .portfolio-wl-phone.four {
-  top: 28%;
-  left: 56%;
 }
 .portfolio-pdf-root .portfolio-bf-phone {
   width: 140px;
