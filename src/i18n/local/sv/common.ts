@@ -145,12 +145,6 @@ export default {
       },
     },
   },
-  stats: {
-    projects: 'Levererade projekt',
-    caffeine: 'Koppar kaffe',
-    commitment: 'Engagemang',
-    happyClients: 'Nöjda kunder',
-  },
   about: {
     eyebrow: 'Om Ventura Software',
     titleLine1: 'Teknisk spetskompetens',

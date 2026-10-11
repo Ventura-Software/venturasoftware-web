@@ -95,25 +95,6 @@ export default function Contact() {
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-600 leading-relaxed">
             <p>{t("about.body")}</p>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
-            {[
-              { number: "30+", label: t("stats.projects") },
-              { number: "1000+", label: t("stats.caffeine") },
-              { number: "100%", label: t("stats.commitment") },
-              { number: "200%", label: t("stats.happyClients") },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-br from-cyan-500 to-blue-500 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-slate-600 font-medium uppercase tracking-wide">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Contact Form Section */}
