@@ -472,30 +472,6 @@
 .portfolio-pdf-root .about-card {
   background: radial-gradient(120% 80% at 80% 20%, #1e2a4a 0%, #111a2d 60%);
 }
-.portfolio-pdf-root .about-stats {
-  display: flex;
-  gap: 28px;
-  margin-top: 28px;
-  flex-wrap: wrap;
-}
-.portfolio-pdf-root .about-stat {
-  min-width: 110px;
-}
-.portfolio-pdf-root .about-stat strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  margin-bottom: 4px;
-  color: #ffffff;
-}
-.portfolio-pdf-root .about-stat span {
-  font-size: 9.5px;
-  color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 0.04em;
-}
 .portfolio-pdf-root .closing-card {
   background: radial-gradient(120% 80% at 20% 80%, #1e2a4a 0%, #111a2d 60%);
   position: relative;

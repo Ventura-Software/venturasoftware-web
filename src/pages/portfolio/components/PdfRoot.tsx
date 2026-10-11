@@ -75,24 +75,6 @@ function AboutCard() {
         >
           {t("portfolio.pdf.aboutBody")}
         </p>
-        <div className="about-stats">
-          <div className="about-stat">
-            <strong>30+</strong>
-            <span>{t("stats.projects")}</span>
-          </div>
-          <div className="about-stat">
-            <strong>1000+</strong>
-            <span>{t("stats.caffeine")}</span>
-          </div>
-          <div className="about-stat">
-            <strong>100%</strong>
-            <span>{t("stats.commitment")}</span>
-          </div>
-          <div className="about-stat">
-            <strong>200%</strong>
-            <span>{t("stats.happyClients")}</span>
-          </div>
-        </div>
       </div>
     </div>
   );

@@ -145,12 +145,6 @@ export default {
       },
     },
   },
-  stats: {
-    projects: 'Projects Delivered',
-    caffeine: 'Caffeine Consumed',
-    commitment: 'Commitment',
-    happyClients: 'Happy Clients',
-  },
   about: {
     eyebrow: 'About Ventura Software',
     titleLine1: 'Engineering Excellence',
