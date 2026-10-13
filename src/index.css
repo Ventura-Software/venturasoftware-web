@@ -335,3 +335,34 @@ html {
     animation: none !important;
   }
 }
+
+/* Phones and touch devices: blurred, blended, permanently animated layers
+   starve the compositor (iOS took ~13 s to paint the home page). Keep the
+   look with static, cheap equivalents. */
+@keyframes word-in-lite {
+  to { opacity: 1; transform: none; }
+}
+@media (hover: none), (max-width: 767px) {
+  .aurora {
+    filter: none;
+    mix-blend-mode: normal;
+    animation: none;
+    -webkit-mask-image: radial-gradient(closest-side, #000, transparent);
+    mask-image: radial-gradient(closest-side, #000, transparent);
+  }
+  [data-reveal] { will-change: auto; }
+  [data-reveal="blur"],
+  .split-word { filter: none; }
+  .split-word { animation-name: word-in-lite; }
+  .split-word.text-shimmer {
+    animation:
+      word-in-lite 1s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+      shimmer 6s linear infinite;
+  }
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-xl {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

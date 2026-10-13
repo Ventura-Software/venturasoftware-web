@@ -29,6 +29,9 @@ export default function ConstellationCanvas({
     if (!canvas || !ctx) return;
 
     const reduced = prefersReducedMotion();
+    // Per-particle shadow blur is the costliest part of a frame; phones
+    // can't afford it at 60 fps.
+    const glow = !window.matchMedia("(hover: none), (max-width: 767px)").matches;
     const mouse = { x: -9999, y: -9999, active: false };
     let particles: Particle[] = [];
     let width = 0;
@@ -114,8 +117,10 @@ export default function ConstellationCanvas({
 
       for (const p of particles) {
         ctx.fillStyle = `hsla(${p.hue}, 95%, 70%, 0.9)`;
-        ctx.shadowColor = `hsla(${p.hue}, 95%, 60%, 0.8)`;
-        ctx.shadowBlur = 8;
+        if (glow) {
+          ctx.shadowColor = `hsla(${p.hue}, 95%, 60%, 0.8)`;
+          ctx.shadowBlur = 8;
+        }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
