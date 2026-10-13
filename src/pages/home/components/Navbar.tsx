@@ -40,7 +40,6 @@ export default function Navbar({ scrolled }: NavbarProps) {
   const goToPortfolio = () => {
     setMobileMenuOpen(false);
     navigate("/portfolio");
-    window.scrollTo({ top: 0 });
   };
 
   const goHome = () => {

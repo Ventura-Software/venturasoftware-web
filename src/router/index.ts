@@ -2,6 +2,7 @@ import { useNavigate, type NavigateFunction } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
 import { useEffect } from "react";
 import routes from "./config";
+import { useScrollToTopOnRouteChange } from "./ScrollToTop";
 
 let navigateResolver: (navigate: ReturnType<typeof useNavigate>) => void;
 
@@ -18,6 +19,7 @@ export const navigatePromise = new Promise<NavigateFunction>((resolve) => {
 export function AppRoutes() {
   const element = useRoutes(routes);
   const navigate = useNavigate();
+  useScrollToTopOnRouteChange();
   useEffect(() => {
     window.REACT_APP_NAVIGATE = navigate;
     navigateResolver(window.REACT_APP_NAVIGATE);
