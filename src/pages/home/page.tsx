@@ -3,10 +3,12 @@ import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
 import Services from './components/Services';
 import WhyWorkWithUs from './components/WhyWorkWithUs';
+import HowWeWork from './components/HowWeWork';
 import Process from './components/Process';
 import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { ScrollProgress } from '@/components/fx/Interactive';
 
 export default function HomePage() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,11 +24,13 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <ScrollProgress />
       <Navbar scrolled={scrolled} />
       <Hero />
       <TrustedBy />
       <Services />
       <WhyWorkWithUs />
+      <HowWeWork />
       <Process />
       <Contact />
       <Footer />

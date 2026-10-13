@@ -10,6 +10,7 @@ interface RevealProps {
   delay?: number;
   className?: string;
   style?: CSSProperties;
+  id?: string;
 }
 
 // Fades its children in (with a small motion) the first time they scroll
@@ -21,6 +22,7 @@ export default function Reveal({
   delay = 0,
   className = "",
   style,
+  id,
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref);
@@ -28,6 +30,7 @@ export default function Reveal({
   return (
     <Tag
       ref={ref}
+      id={id}
       data-reveal={variant}
       className={`${className} ${inView ? "is-visible" : ""}`}
       style={{ ...style, transitionDelay: `${delay}ms` }}
