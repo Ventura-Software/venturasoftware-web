@@ -50,7 +50,6 @@ export default function Process() {
     number: String(index + 1).padStart(2, "0"),
     title: t(`process.steps.${step.id}.title`),
     description: t(`process.steps.${step.id}.description`),
-    duration: t(`process.steps.${step.id}.duration`),
   }));
 
   return (
@@ -112,13 +111,9 @@ export default function Process() {
                       <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
                         {step.title}
                       </h3>
-                      <p className="text-slate-400 leading-relaxed mb-4">
+                      <p className="text-slate-400 leading-relaxed">
                         {step.description}
                       </p>
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-full">
-                        <i className="ri-time-line" />
-                        {step.duration}
-                      </span>
                     </div>
                   </Reveal>
 

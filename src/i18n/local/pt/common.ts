@@ -78,37 +78,31 @@ export default {
         title: 'Descoberta',
         description:
           'Levantamento de requisitos, pesquisa de mercado e planejamento estratégico para alinhar objetivos.',
-        duration: '1-2 semanas',
       },
       design: {
         title: 'Design UI/UX',
         description:
           'Wireframes, protótipos interativos e design systems completos.',
-        duration: '2-3 semanas',
       },
       development: {
         title: 'Desenvolvimento',
         description:
           'Sprints ágeis com code review, testes automatizados e integração contínua.',
-        duration: '6-12 semanas',
       },
       qa: {
         title: 'QA e testes',
         description:
           'Testes completos, incluindo testes automatizados, QA manual e otimização de desempenho.',
-        duration: '1-2 semanas',
       },
       launch: {
         title: 'Lançamento',
         description:
           'Deploy em produção, configuração de monitoramento e otimização de desempenho.',
-        duration: '1 semana',
       },
       support: {
         title: 'Suporte e crescimento',
         description:
           'Manutenção contínua, novas funcionalidades e escalabilidade conforme seu negócio cresce.',
-        duration: 'Contínuo',
       },
     },
   },

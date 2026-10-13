@@ -80,37 +80,31 @@ export default {
         title: 'Discovery',
         description:
           'Anforderungsanalyse, Marktrecherche und strategische Planung, um die Ziele abzustimmen.',
-        duration: '1–2 Wochen',
       },
       design: {
         title: 'UI/UX-Design',
         description:
           'Wireframes, interaktive Prototypen und umfassende Designsysteme.',
-        duration: '2–3 Wochen',
       },
       development: {
         title: 'Entwicklung',
         description:
           'Agile Sprints mit Code-Reviews, automatisierten Tests und Continuous Integration.',
-        duration: '6–12 Wochen',
       },
       qa: {
         title: 'QA & Testing',
         description:
           'Umfassende Tests mit automatisierten Tests, manueller QA und Performance-Optimierung.',
-        duration: '1–2 Wochen',
       },
       launch: {
         title: 'Launch',
         description:
           'Deployment in die Produktion, Einrichtung des Monitorings und Performance-Optimierung.',
-        duration: '1 Woche',
       },
       support: {
         title: 'Support & Wachstum',
         description:
           'Laufende Wartung, neue Features und Skalierung, während Ihr Unternehmen wächst.',
-        duration: 'Fortlaufend',
       },
     },
   },

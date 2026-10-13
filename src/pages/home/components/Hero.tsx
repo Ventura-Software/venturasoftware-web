@@ -2,25 +2,7 @@ import { useTranslation } from "react-i18next";
 import ConstellationCanvas from "@/components/fx/ConstellationCanvas";
 import { SplitWords } from "@/components/fx/Reveal";
 import { MagneticButton, MagneticLink } from "@/components/fx/Interactive";
-import { useNow } from "@/components/fx/hooks";
 import { CALENDLY_URL } from "@/config/contact";
-
-const MONTEVIDEO_TIME = new Intl.DateTimeFormat("en-GB", {
-  timeZone: "America/Montevideo",
-  hour: "2-digit",
-  minute: "2-digit",
-  second: "2-digit",
-});
-
-// Isolated so the per-second tick doesn't re-render the whole hero.
-function MontevideoClock() {
-  const now = useNow();
-  return (
-    <span className="font-mono tabular-nums text-cyan-300">
-      {MONTEVIDEO_TIME.format(now)}
-    </span>
-  );
-}
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -47,17 +29,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pt-24 text-center">
-        <div
-          className="fade-up inline-flex items-center gap-3 px-4 py-2 mb-10 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm text-slate-300"
-          style={{ animationDelay: "0.1s" }}
-        >
-          <span className="live-dot" />
-          <span className="font-medium">Montevideo, Uruguay</span>
-          <span className="w-px h-4 bg-white/15" />
-          <MontevideoClock />
-          <span className="text-slate-500 font-mono">UTC−3</span>
-        </div>
-
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
           <SplitWords text="Ventura Software" />
           <br />
@@ -98,16 +69,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll cue */}
-      <button
-        type="button"
-        onClick={() => scrollToSection("services")}
-        aria-label={t("hero.ourServices")}
-        className="fade-up hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
-        style={{ animationDelay: "1.4s" }}
-      >
-        <span className="scroll-cue relative block w-6 h-10 rounded-full border-2 border-white/25" />
-      </button>
     </section>
   );
 }

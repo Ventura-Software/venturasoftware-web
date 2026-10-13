@@ -267,25 +267,6 @@ html {
   75%, 100% { transform: scale(2.6); opacity: 0; }
 }
 
-/* Scroll cue */
-.scroll-cue::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 8px;
-  width: 4px;
-  height: 8px;
-  margin-left: -2px;
-  border-radius: 2px;
-  background: #22d3ee;
-  animation: scroll-cue 1.8s ease-in-out infinite;
-}
-@keyframes scroll-cue {
-  0% { opacity: 0; transform: translateY(0); }
-  30% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(14px); }
-}
-
 /* Faint grid that slowly pans */
 .grid-pan {
   background-image:
@@ -350,8 +331,7 @@ html {
   .btn-shine::after,
   .border-spin,
   .grid-pan,
-  .live-dot::after,
-  .scroll-cue::after {
+  .live-dot::after {
     animation: none !important;
   }
 }

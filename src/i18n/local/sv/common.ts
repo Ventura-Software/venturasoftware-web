@@ -78,37 +78,31 @@ export default {
         title: 'Discovery',
         description:
           'Kravinsamling, marknadsanalys och strategisk planering för att enas om målen.',
-        duration: '1–2 veckor',
       },
       design: {
         title: 'UI/UX-design',
         description:
           'Wireframes, interaktiva prototyper och kompletta designsystem.',
-        duration: '2–3 veckor',
       },
       development: {
         title: 'Utveckling',
         description:
           'Agila sprintar med kodgranskning, automatiserade tester och kontinuerlig integration.',
-        duration: '6–12 veckor',
       },
       qa: {
         title: 'QA och testning',
         description:
           'Omfattande testning med automatiserade tester, manuell QA och prestandaoptimering.',
-        duration: '1–2 veckor',
       },
       launch: {
         title: 'Lansering',
         description:
           'Driftsättning i produktion, uppsättning av övervakning och prestandaoptimering.',
-        duration: '1 vecka',
       },
       support: {
         title: 'Support och tillväxt',
         description:
           'Löpande underhåll, nya funktioner och skalning i takt med att ditt företag växer.',
-        duration: 'Löpande',
       },
     },
   },

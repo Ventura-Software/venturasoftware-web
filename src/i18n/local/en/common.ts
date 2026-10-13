@@ -78,37 +78,31 @@ export default {
         title: 'Discovery',
         description:
           'Requirements gathering, market research, and strategic planning to align on goals.',
-        duration: '1-2 weeks',
       },
       design: {
         title: 'UI/UX Design',
         description:
           'Wireframes, interactive prototypes, and comprehensive design systems.',
-        duration: '2-3 weeks',
       },
       development: {
         title: 'Development',
         description:
           'Agile sprints with code reviews, automated testing, and continuous integration.',
-        duration: '6-12 weeks',
       },
       qa: {
         title: 'QA & Testing',
         description:
           'Comprehensive testing including automated tests, manual QA, and performance optimization.',
-        duration: '1-2 weeks',
       },
       launch: {
         title: 'Launch',
         description:
           'Deployment to production, monitoring setup, and performance optimization.',
-        duration: '1 week',
       },
       support: {
         title: 'Support & Growth',
         description:
           'Ongoing maintenance, feature updates, and scaling as your business grows.',
-        duration: 'Ongoing',
       },
     },
   },
