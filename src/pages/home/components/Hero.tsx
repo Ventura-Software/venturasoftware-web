@@ -61,9 +61,11 @@ export default function Hero() {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
           <SplitWords text="Ventura Software" />
           <br />
-          <span className="text-shimmer">
-            <SplitWords text={t("hero.tagline")} baseDelay={250} />
-          </span>
+          <SplitWords
+            text={t("hero.tagline")}
+            wordClassName="text-shimmer pb-[0.08em]"
+            baseDelay={250}
+          />
         </h1>
 
         <p
@@ -101,7 +103,7 @@ export default function Hero() {
         type="button"
         onClick={() => scrollToSection("services")}
         aria-label={t("hero.ourServices")}
-        className="fade-up absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
+        className="fade-up hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
         style={{ animationDelay: "1.4s" }}
       >
         <span className="scroll-cue relative block w-6 h-10 rounded-full border-2 border-white/25" />

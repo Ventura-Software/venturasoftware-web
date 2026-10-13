@@ -121,7 +121,7 @@ export default function TrustedBy() {
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="max-w-full max-h-full object-contain transition-all duration-500 [@media(hover:hover)]:grayscale [@media(hover:hover)]:opacity-60 group-hover:grayscale-0 group-hover:opacity-100"
                 />
               </a>
             ))}

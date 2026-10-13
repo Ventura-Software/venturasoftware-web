@@ -44,11 +44,15 @@ export default function Reveal({
 export function SplitWords({
   text,
   className = "",
+  wordClassName = "",
   baseDelay = 0,
   step = 70,
 }: {
   text: string;
   className?: string;
+  // Applied per word: effects like background-clip text must live on the
+  // animated word itself, since its filter isolates it from the parent.
+  wordClassName?: string;
   baseDelay?: number;
   step?: number;
 }) {
@@ -58,7 +62,7 @@ export function SplitWords({
         <span
           key={`${word}-${i}`}
           aria-hidden="true"
-          className="split-word"
+          className={`split-word ${wordClassName}`}
           style={{ animationDelay: `${baseDelay + i * step}ms` }}
         >
           {word}

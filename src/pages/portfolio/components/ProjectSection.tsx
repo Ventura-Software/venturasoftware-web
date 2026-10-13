@@ -28,9 +28,7 @@ export default function ProjectSection({ project }: Props) {
         <DeviceStage project={project} />
       </div>
       <div className="info">
-        <div style={step(0)}>
-          <TypeBadge type={project.type} />
-        </div>
+        <TypeBadge type={project.type} />
         <div className="year" style={step(1)}>
           {project.year.replace("Present", t("portfolio.present"))}
         </div>

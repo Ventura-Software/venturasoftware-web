@@ -112,6 +112,11 @@ html {
 @keyframes shimmer {
   to { background-position: -200% center; }
 }
+.split-word.text-shimmer {
+  animation:
+    word-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    shimmer 6s linear infinite;
+}
 
 /* Floating aurora blobs */
 .aurora {
