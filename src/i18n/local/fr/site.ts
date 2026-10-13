@@ -1,4 +1,4 @@
-// French typography: " " is a non-breaking space before ? ! : ;
+// French typography: "\u00a0" is a non-breaking space before ? ! : ;
 export default {
   meta: {
     title: 'Ventura Software | Applications mobiles et plateformes, depuis Montevideo',
@@ -9,11 +9,11 @@ export default {
     eyebrow: 'Notre façon de travailler',
     title: 'Nos journées se recoupent avec les vôtres',
     body:
-      "Montevideo est à UTC-3 toute l'année, sans heure d'été : 1 à 2 heures d'avance sur la côte Est des États-Unis, et nos matinées recouvrent vos après-midis en Europe centrale.",
+      "Montevideo est à UTC-3 toute l'année, sans heure d'été\u00a0: 1 à 2 heures d'avance sur la côte Est des États-Unis, et nos matinées recouvrent vos après-midis en Europe centrale.",
     languages: 'Nous travaillons en anglais et en espagnol.',
     you: 'Votre heure',
-    overlap: '{{count}} h en commun',
-    legend: 'Les barres indiquent 9 h à 18 h, heure locale de chaque ville',
+    overlap: '{{count}}\u00a0h en commun',
+    legend: 'Les barres indiquent 9\u00a0h à 18\u00a0h, heure locale de chaque ville',
     cities: {
       montevideo: 'Montevideo',
       newYork: 'New York',
@@ -25,13 +25,13 @@ export default {
   privacyPage: {
     eyebrow: 'Mentions légales',
     title: 'Politique de confidentialité',
-    updated: 'Dernière mise à jour : octobre 2026',
+    updated: 'Dernière mise à jour\u00a0: octobre 2026',
     intro:
       'Cette page explique quelles données personnelles le site de Ventura Software (venturasoftware.dev) collecte, pourquoi, et ce que vous pouvez faire à ce sujet.',
     sections: [
       {
         title: 'Ce que nous collectons',
-        body: "Uniquement ce que vous nous envoyez via le formulaire de contact : votre nom, votre adresse e-mail et votre message. Si vous nous écrivez par e-mail ou sur WhatsApp, ou réservez un appel, nous recevons ce que vous choisissez d'y partager.",
+        body: "Uniquement ce que vous nous envoyez via le formulaire de contact\u00a0: votre nom, votre adresse e-mail et votre message. Si vous nous écrivez par e-mail ou sur WhatsApp, ou réservez un appel, nous recevons ce que vous choisissez d'y partager.",
       },
       {
         title: 'Comment nous les utilisons',

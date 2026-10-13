@@ -7,6 +7,7 @@ import PdfRoot from "./components/PdfRoot";
 import { PROJECTS } from "./data";
 import { generatePortfolioPdf } from "./pdf";
 import "./portfolio.css";
+import { ScrollProgress } from "@/components/fx/Interactive";
 
 export default function PortfolioPage() {
   const { t } = useTranslation();
@@ -39,6 +40,7 @@ export default function PortfolioPage() {
 
   return (
     <div className="portfolio-root">
+      <ScrollProgress />
       <Navbar scrolled={scrolled} />
 
       <button
@@ -66,9 +68,13 @@ export default function PortfolioPage() {
 
       <main>
         <section className="portfolio-section portfolio-hero">
-          <div className="eyebrow">{t("portfolio.eyebrow")}</div>
-          <h1>{t("portfolio.title")}</h1>
-          <div className="tag">{t("portfolio.intro")}</div>
+          <div className="eyebrow fade-up">{t("portfolio.eyebrow")}</div>
+          <h1 className="fade-up" style={{ animationDelay: "0.1s" }}>
+            <span className="text-shimmer">{t("portfolio.title")}</span>
+          </h1>
+          <div className="tag fade-up" style={{ animationDelay: "0.25s" }}>
+            {t("portfolio.intro")}
+          </div>
         </section>
 
         {PROJECTS.map((p) => (

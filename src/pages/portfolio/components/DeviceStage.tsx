@@ -4,13 +4,14 @@ interface Props {
   project: Project;
 }
 
-function ScreenFrame({ screen }: { screen: Screen }) {
+function ScreenFrame({ screen, index }: { screen: Screen; index: number }) {
   const style = {
+    "--i": index,
     top: `${screen.top}%`,
     left: `${screen.left}%`,
     width: `${screen.width}%`,
     zIndex: screen.z,
-  };
+  } as React.CSSProperties;
 
   if (screen.device === "phone") {
     return (
@@ -37,8 +38,8 @@ export default function DeviceStage({ project }: Props) {
     return (
       <div className="portfolio-canvas-box">
         <div className="portfolio-canvas">
-          {project.screens.map((s) => (
-            <ScreenFrame key={s.src} screen={s} />
+          {project.screens.map((s, i) => (
+            <ScreenFrame key={s.src} screen={s} index={i} />
           ))}
         </div>
       </div>
