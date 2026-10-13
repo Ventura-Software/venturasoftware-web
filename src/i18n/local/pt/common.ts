@@ -13,8 +13,7 @@ export default {
   },
   hero: {
     tagline: 'Engenharia de software de ponta a ponta',
-    subtitle:
-      'Projetamos, construímos e escalamos produtos digitais de alta qualidade com uma equipe de engenheiros sênior focada em clareza, confiabilidade e execução excelente.',
+    subtitle: 'Um estúdio de software em Montevidéu, Uruguai. Construímos apps móveis e as plataformas por trás deles, da primeira versão à produção.',
     ourServices: 'Nossos serviços',
   },
   trustedBy: {
@@ -25,11 +24,6 @@ export default {
     title: 'O que construímos',
     subtitle: 'Soluções de software completas, sob medida para as necessidades do seu negócio',
     items: {
-      product: {
-        title: 'Desenvolvimento de produto de ponta a ponta',
-        description: 'Da ideia inicial a um lançamento de sucesso, e além.',
-        tags: ['Estratégia', 'Design', 'Desenvolvimento', 'Lançamento'],
-      },
       web: {
         title: 'Aplicações web sob medida',
         description:
@@ -40,18 +34,6 @@ export default {
         title: 'Aplicativos móveis',
         description: 'Apps multiplataforma de alto desempenho com React Native.',
         tags: ['React Native', 'iOS', 'Android', 'Multiplataforma'],
-      },
-      ai: {
-        title: 'Funcionalidades com IA',
-        description:
-          'OpenAI, embeddings e bancos de dados vetoriais para melhorar a busca, a automação e a experiência do usuário.',
-        tags: ['OpenAI', 'Embeddings', 'Vector DB', 'Automação'],
-      },
-      saas: {
-        title: 'Desenvolvimento de plataformas SaaS',
-        description:
-          'Arquitetura SaaS completa: autenticação, assinaturas, pagamentos, analytics, perfis de usuário e infraestrutura escalável.',
-        tags: ['Autenticação', 'Assinaturas', 'Pagamentos', 'Analytics'],
       },
       integrations: {
         title: 'Integrações de APIs e sistemas',
@@ -84,27 +66,12 @@ export default {
         description:
           'Uma equipe estável de longo prazo que reduz o custo de onboarding e garante continuidade.',
       },
-      talent: {
-        title: 'Talentos qualificados',
-        description:
-          'Engenheiros sênior com experiência em React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL e integrações em nuvem.',
-      },
-      ethic: {
-        title: 'Ética profissional',
-        description:
-          'Transparência, senso de dono, responsabilidade e altos padrões de comunicação.',
-      },
-      business: {
-        title: 'Visão de negócio',
-        description:
-          'Pensamos além do código: produto, monetização, escalabilidade e ROI fazem parte do processo.',
-      },
     },
   },
   process: {
     eyebrow: 'Nosso processo',
     title: 'Desenvolvimento de ponta a ponta',
-    subtitle: 'Uma metodologia comprovada que leva seu produto da ideia ao lançamento',
+    subtitle: 'Como um projeto vai da primeira conversa à produção.',
     step: 'Etapa {{number}}',
     steps: {
       discovery: {
@@ -153,29 +120,19 @@ export default {
       'A Ventura Software é um estúdio boutique de engenharia focado em entregar produtos digitais confiáveis, escaláveis e de alta qualidade. Ajudamos empresas a ampliar e fortalecer suas capacidades de produto com expertise de engenharia sênior.',
   },
   contact: {
-    title: 'Vamos construir algo incrível juntos.',
-    body:
-      'Pronto para começar seu projeto? Entre em contato e vamos conversar sobre como podemos ajudar você a alcançar seus objetivos.',
+    title: 'Conte o que você precisa.',
+    body: 'Agende uma chamada de 30 minutos, escreva por e-mail ou WhatsApp. Ou use o formulário.',
     email: 'E-mail',
     phone: 'Telefone',
     location: 'Localização',
+    bookCall: 'Agende uma chamada de 30 min',
+    privacyNotice: 'Usamos seus dados apenas para responder a você. O formulário é enviado pelo EmailJS.',
+    privacyLink: 'Política de privacidade',
     form: {
       name: 'Nome',
       namePlaceholder: 'João Silva',
       email: 'E-mail',
       emailPlaceholder: 'joao@empresa.com',
-      company: 'Empresa',
-      companyPlaceholder: 'Sua empresa',
-      projectType: 'Tipo de projeto',
-      projectTypePlaceholder: 'Selecione um tipo de projeto',
-      projectTypes: {
-        web: 'Desenvolvimento web',
-        mobile: 'Desenvolvimento mobile',
-        backend: 'Backend e APIs',
-        design: 'Design UX/UI',
-        full: 'Produto de ponta a ponta',
-        other: 'Outro',
-      },
       message: 'Mensagem',
       messagePlaceholder: 'Conte-nos sobre o seu projeto...',
       maxChars: 'Máximo de 500 caracteres',

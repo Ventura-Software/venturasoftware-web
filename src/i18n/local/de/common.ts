@@ -15,8 +15,7 @@ export default {
   },
   hero: {
     tagline: 'Softwareentwicklung von A bis Z',
-    subtitle:
-      'Wir konzipieren, entwickeln und skalieren hochwertige digitale Produkte – mit einem Senior-Engineering-Team, das auf Klarheit, Zuverlässigkeit und exzellente Umsetzung setzt.',
+    subtitle: 'Ein Softwarestudio in Montevideo, Uruguay. Wir entwickeln mobile Apps und die Plattformen dahinter, von der ersten Version bis zum Produktivbetrieb.',
     ourServices: 'Unsere Leistungen',
   },
   trustedBy: {
@@ -27,11 +26,6 @@ export default {
     title: 'Was wir entwickeln',
     subtitle: 'Umfassende Softwarelösungen, zugeschnitten auf die Anforderungen Ihres Unternehmens',
     items: {
-      product: {
-        title: 'Produktentwicklung von A bis Z',
-        description: 'Von der ersten Idee bis zum erfolgreichen Launch – und darüber hinaus.',
-        tags: ['Strategie', 'Design', 'Entwicklung', 'Launch'],
-      },
       web: {
         title: 'Individuelle Webanwendungen',
         description:
@@ -42,18 +36,6 @@ export default {
         title: 'Mobile Apps',
         description: 'Leistungsstarke plattformübergreifende Apps mit React Native.',
         tags: ['React Native', 'iOS', 'Android', 'Cross-Platform'],
-      },
-      ai: {
-        title: 'KI-gestützte Funktionen',
-        description:
-          'OpenAI, Embeddings und Vektordatenbanken für bessere Suche, Automatisierung und User Experience.',
-        tags: ['OpenAI', 'Embeddings', 'Vector DB', 'Automatisierung'],
-      },
-      saas: {
-        title: 'Entwicklung von SaaS-Plattformen',
-        description:
-          'Durchgängige SaaS-Architektur: Authentifizierung, Abonnements, Zahlungen, Analytics, Benutzerrollen und skalierbare Infrastruktur.',
-        tags: ['Authentifizierung', 'Abonnements', 'Zahlungen', 'Analytics'],
       },
       integrations: {
         title: 'API- und Systemintegrationen',
@@ -86,27 +68,12 @@ export default {
         description:
           'Ein stabiles, langfristiges Team, das den Onboarding-Aufwand senkt und Kontinuität sichert.',
       },
-      talent: {
-        title: 'Qualifizierte Fachkräfte',
-        description:
-          'Senior Engineers mit Erfahrung in React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL und Cloud-Integrationen.',
-      },
-      ethic: {
-        title: 'Professionelle Arbeitsweise',
-        description:
-          'Transparenz, Eigenverantwortung, Verlässlichkeit und hohe Kommunikationsstandards.',
-      },
-      business: {
-        title: 'Unternehmerisches Denken',
-        description:
-          'Wir denken über den Code hinaus: Produkt, Monetarisierung, Skalierbarkeit und ROI sind Teil des Prozesses.',
-      },
     },
   },
   process: {
     eyebrow: 'Unser Prozess',
     title: 'Entwicklung von A bis Z',
-    subtitle: 'Eine bewährte Methodik, die Ihr Produkt von der Idee bis zum Launch begleitet',
+    subtitle: 'Wie ein Projekt vom ersten Gespräch in die Produktion kommt.',
     step: 'Schritt {{number}}',
     steps: {
       discovery: {
@@ -155,29 +122,19 @@ export default {
       'Ventura Software ist ein Boutique-Engineering-Studio, das zuverlässige, skalierbare und hochwertige digitale Produkte liefert. Wir unterstützen Unternehmen dabei, ihre Produktkompetenzen mit Senior-Engineering-Know-how auszubauen und zu stärken.',
   },
   contact: {
-    title: 'Lassen Sie uns gemeinsam etwas Herausragendes bauen.',
-    body:
-      'Bereit für Ihr Projekt? Nehmen Sie Kontakt auf und lassen Sie uns besprechen, wie wir Sie beim Erreichen Ihrer Ziele unterstützen können.',
+    title: 'Sagen Sie uns, was Sie brauchen.',
+    body: 'Buchen Sie ein 30-minütiges Gespräch, schreiben Sie uns per E-Mail oder WhatsApp. Oder nutzen Sie das Formular.',
     email: 'E-Mail',
     phone: 'Telefon',
     location: 'Standort',
+    bookCall: '30-Minuten-Gespräch buchen',
+    privacyNotice: 'Wir verwenden Ihre Daten nur, um Ihnen zu antworten. Das Formular wird über EmailJS übermittelt.',
+    privacyLink: 'Datenschutzerklärung',
     form: {
       name: 'Name',
       namePlaceholder: 'Max Muster',
       email: 'E-Mail',
       emailPlaceholder: 'max@firma.com',
-      company: 'Unternehmen',
-      companyPlaceholder: 'Ihr Unternehmen',
-      projectType: 'Projektart',
-      projectTypePlaceholder: 'Projektart auswählen',
-      projectTypes: {
-        web: 'Webentwicklung',
-        mobile: 'Mobile Entwicklung',
-        backend: 'Backend & APIs',
-        design: 'UX/UI-Design',
-        full: 'Produkt von A bis Z',
-        other: 'Sonstiges',
-      },
       message: 'Nachricht',
       messagePlaceholder: 'Erzählen Sie uns von Ihrem Projekt...',
       maxChars: 'Maximal 500 Zeichen',

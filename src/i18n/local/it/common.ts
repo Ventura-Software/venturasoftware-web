@@ -13,8 +13,7 @@ export default {
   },
   hero: {
     tagline: 'Ingegneria del software end-to-end',
-    subtitle:
-      'Progettiamo, sviluppiamo e facciamo crescere prodotti digitali di alta qualità con un team di ingegneri senior focalizzato su chiarezza, affidabilità ed eccellenza nell’esecuzione.',
+    subtitle: 'Uno studio software a Montevideo, in Uruguay. Sviluppiamo app mobile e le piattaforme che le supportano, dalla prima versione alla produzione.',
     ourServices: 'I nostri servizi',
   },
   trustedBy: {
@@ -25,11 +24,6 @@ export default {
     title: 'Cosa sviluppiamo',
     subtitle: 'Soluzioni software complete, su misura per le esigenze della tua azienda',
     items: {
-      product: {
-        title: 'Sviluppo prodotto end-to-end',
-        description: 'Dall’idea iniziale a un lancio di successo, e oltre.',
-        tags: ['Strategia', 'Design', 'Sviluppo', 'Lancio'],
-      },
       web: {
         title: 'Applicazioni web su misura',
         description:
@@ -40,18 +34,6 @@ export default {
         title: 'Applicazioni mobile',
         description: 'App multipiattaforma ad alte prestazioni con React Native.',
         tags: ['React Native', 'iOS', 'Android', 'Multipiattaforma'],
-      },
-      ai: {
-        title: 'Funzionalità basate sull’IA',
-        description:
-          'OpenAI, embedding e database vettoriali per migliorare ricerca, automazione ed esperienza utente.',
-        tags: ['OpenAI', 'Embedding', 'Vector DB', 'Automazione'],
-      },
-      saas: {
-        title: 'Sviluppo di piattaforme SaaS',
-        description:
-          'Architettura SaaS completa: autenticazione, abbonamenti, pagamenti, analytics, ruoli utente e infrastruttura scalabile.',
-        tags: ['Autenticazione', 'Abbonamenti', 'Pagamenti', 'Analytics'],
       },
       integrations: {
         title: 'Integrazioni di API e sistemi',
@@ -84,27 +66,12 @@ export default {
         description:
           'Un team stabile nel lungo periodo che riduce i costi di onboarding e assicura continuità.',
       },
-      talent: {
-        title: 'Talenti qualificati',
-        description:
-          'Ingegneri senior con esperienza in React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL e integrazioni cloud.',
-      },
-      ethic: {
-        title: 'Etica professionale',
-        description:
-          'Trasparenza, senso di responsabilità, affidabilità e standard di comunicazione elevati.',
-      },
-      business: {
-        title: 'Mentalità di business',
-        description:
-          'Pensiamo oltre il codice: prodotto, monetizzazione, scalabilità e ROI fanno parte del processo.',
-      },
     },
   },
   process: {
     eyebrow: 'Il nostro processo',
     title: 'Sviluppo end-to-end',
-    subtitle: 'Una metodologia collaudata che porta il tuo prodotto dall’idea al lancio',
+    subtitle: 'Come un progetto passa dalla prima call alla produzione.',
     step: 'Fase {{number}}',
     steps: {
       discovery: {
@@ -153,29 +120,19 @@ export default {
       'Ventura Software è uno studio di ingegneria boutique che realizza prodotti digitali affidabili, scalabili e di alta qualità. Aiutiamo le aziende ad ampliare e rafforzare le proprie capacità di prodotto grazie a competenze ingegneristiche senior.',
   },
   contact: {
-    title: 'Costruiamo insieme qualcosa di straordinario.',
-    body:
-      'Pronto a iniziare il tuo progetto? Contattaci e parliamo di come possiamo aiutarti a raggiungere i tuoi obiettivi.',
+    title: 'Raccontaci di cosa hai bisogno.',
+    body: 'Prenota una call di 30 minuti, scrivici via email o su WhatsApp. Oppure usa il modulo.',
     email: 'Email',
     phone: 'Telefono',
     location: 'Sede',
+    bookCall: 'Prenota una call di 30 min',
+    privacyNotice: 'Usiamo i tuoi dati solo per risponderti. Il modulo viene inviato tramite EmailJS.',
+    privacyLink: 'Informativa sulla privacy',
     form: {
       name: 'Nome',
       namePlaceholder: 'Mario Rossi',
       email: 'Email',
       emailPlaceholder: 'mario@azienda.com',
-      company: 'Azienda',
-      companyPlaceholder: 'La tua azienda',
-      projectType: 'Tipo di progetto',
-      projectTypePlaceholder: 'Seleziona un tipo di progetto',
-      projectTypes: {
-        web: 'Sviluppo web',
-        mobile: 'Sviluppo mobile',
-        backend: 'Backend e API',
-        design: 'Design UX/UI',
-        full: 'Prodotto end-to-end',
-        other: 'Altro',
-      },
       message: 'Messaggio',
       messagePlaceholder: 'Raccontaci il tuo progetto...',
       maxChars: 'Massimo 500 caratteri',

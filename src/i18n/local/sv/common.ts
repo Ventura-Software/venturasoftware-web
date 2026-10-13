@@ -13,8 +13,7 @@ export default {
   },
   hero: {
     tagline: 'Mjukvaruutveckling från idé till drift',
-    subtitle:
-      'Vi designar, bygger och skalar digitala produkter av hög kvalitet med ett seniort utvecklingsteam som fokuserar på tydlighet, tillförlitlighet och utmärkt genomförande.',
+    subtitle: 'En mjukvarustudio i Montevideo, Uruguay. Vi bygger mobilappar och plattformarna bakom dem, från första version till produktion.',
     ourServices: 'Våra tjänster',
   },
   trustedBy: {
@@ -25,11 +24,6 @@ export default {
     title: 'Vad vi bygger',
     subtitle: 'Heltäckande mjukvarulösningar anpassade efter ditt företags behov',
     items: {
-      product: {
-        title: 'Produktutveckling från idé till lansering',
-        description: 'Från den första idén till en lyckad lansering – och vidare.',
-        tags: ['Strategi', 'Design', 'Utveckling', 'Lansering'],
-      },
       web: {
         title: 'Skräddarsydda webbapplikationer',
         description:
@@ -40,18 +34,6 @@ export default {
         title: 'Mobilappar',
         description: 'Snabba plattformsoberoende appar med React Native.',
         tags: ['React Native', 'iOS', 'Android', 'Plattformsoberoende'],
-      },
-      ai: {
-        title: 'AI-drivna funktioner',
-        description:
-          'OpenAI, embeddings och vektordatabaser för bättre sökning, automatisering och användarupplevelse.',
-        tags: ['OpenAI', 'Embeddings', 'Vector DB', 'Automatisering'],
-      },
-      saas: {
-        title: 'Utveckling av SaaS-plattformar',
-        description:
-          'Komplett SaaS-arkitektur: autentisering, prenumerationer, betalningar, analys, användarroller och skalbar infrastruktur.',
-        tags: ['Autentisering', 'Prenumerationer', 'Betalningar', 'Analys'],
       },
       integrations: {
         title: 'API- och systemintegrationer',
@@ -84,27 +66,12 @@ export default {
         description:
           'Ett stabilt, långsiktigt team som minskar onboardingkostnader och säkrar kontinuitet.',
       },
-      talent: {
-        title: 'Kvalificerade talanger',
-        description:
-          'Seniora utvecklare med erfarenhet av React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL och molnintegrationer.',
-      },
-      ethic: {
-        title: 'Professionell arbetsmoral',
-        description:
-          'Transparens, ägarskap, ansvarstagande och höga krav på kommunikation.',
-      },
-      business: {
-        title: 'Affärsfokus',
-        description:
-          'Vi tänker bortom koden: produkt, intäktsmodell, skalbarhet och ROI är en del av processen.',
-      },
     },
   },
   process: {
     eyebrow: 'Vår process',
     title: 'Utveckling från start till mål',
-    subtitle: 'En beprövad metodik som tar din produkt från idé till lansering',
+    subtitle: 'Så går ett projekt från första samtalet till produktion.',
     step: 'Steg {{number}}',
     steps: {
       discovery: {
@@ -153,29 +120,19 @@ export default {
       'Ventura Software är en boutiquestudio för mjukvaruutveckling som levererar pålitliga, skalbara digitala produkter av hög kvalitet. Vi hjälper företag att bygga ut och stärka sin produktförmåga med senior teknisk expertis.',
   },
   contact: {
-    title: 'Låt oss bygga något fantastiskt tillsammans.',
-    body:
-      'Redo att starta ditt projekt? Hör av dig så pratar vi om hur vi kan hjälpa dig att nå dina mål.',
+    title: 'Berätta vad du behöver.',
+    body: 'Boka ett samtal på 30 minuter, mejla oss eller skriv på WhatsApp. Eller använd formuläret.',
     email: 'E-post',
     phone: 'Telefon',
     location: 'Plats',
+    bookCall: 'Boka ett samtal på 30 min',
+    privacyNotice: 'Vi använder dina uppgifter endast för att svara dig. Formuläret skickas via EmailJS.',
+    privacyLink: 'Integritetspolicy',
     form: {
       name: 'Namn',
       namePlaceholder: 'Anna Andersson',
       email: 'E-post',
       emailPlaceholder: 'anna@foretag.se',
-      company: 'Företag',
-      companyPlaceholder: 'Ditt företag',
-      projectType: 'Projekttyp',
-      projectTypePlaceholder: 'Välj en projekttyp',
-      projectTypes: {
-        web: 'Webbutveckling',
-        mobile: 'Mobilutveckling',
-        backend: 'Backend och API:er',
-        design: 'UX/UI-design',
-        full: 'Hel produkt från idé till lansering',
-        other: 'Annat',
-      },
       message: 'Meddelande',
       messagePlaceholder: 'Berätta om ditt projekt...',
       maxChars: 'Högst 500 tecken',

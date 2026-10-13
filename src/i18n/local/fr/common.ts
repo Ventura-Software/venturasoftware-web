@@ -14,8 +14,7 @@ export default {
   },
   hero: {
     tagline: 'Ingénierie logicielle de bout en bout',
-    subtitle:
-      "Nous concevons, développons et faisons évoluer des produits numériques de grande qualité grâce à une équipe d'ingénieurs seniors axée sur la clarté, la fiabilité et l'excellence d'exécution.",
+    subtitle: 'Un studio logiciel à Montevideo, en Uruguay. Nous développons des applications mobiles et les plateformes qui les font tourner, de la première version à la production.',
     ourServices: 'Nos services',
   },
   trustedBy: {
@@ -26,11 +25,6 @@ export default {
     title: 'Ce que nous développons',
     subtitle: 'Des solutions logicielles complètes, adaptées aux besoins de votre entreprise',
     items: {
-      product: {
-        title: 'Développement de produit de bout en bout',
-        description: "De l'idée initiale à un lancement réussi, et au-delà.",
-        tags: ['Stratégie', 'Design', 'Développement', 'Lancement'],
-      },
       web: {
         title: 'Applications web sur mesure',
         description:
@@ -41,18 +35,6 @@ export default {
         title: 'Applications mobiles',
         description: 'Des applications multiplateformes performantes avec React Native.',
         tags: ['React Native', 'iOS', 'Android', 'Multiplateforme'],
-      },
-      ai: {
-        title: "Fonctionnalités basées sur l'IA",
-        description:
-          "OpenAI, embeddings et bases de données vectorielles pour améliorer la recherche, l'automatisation et l'expérience utilisateur.",
-        tags: ['OpenAI', 'Embeddings', 'Vector DB', 'Automatisation'],
-      },
-      saas: {
-        title: 'Développement de plateformes SaaS',
-        description:
-          'Architecture SaaS complète\u00a0: authentification, abonnements, paiements, analytique, rôles utilisateurs et infrastructure évolutive.',
-        tags: ['Authentification', 'Abonnements', 'Paiements', 'Analytique'],
       },
       integrations: {
         title: "Intégrations d'API et de systèmes",
@@ -85,27 +67,12 @@ export default {
         description:
           "Une équipe stable sur le long terme, qui réduit les coûts d'intégration et assure la continuité.",
       },
-      talent: {
-        title: 'Des talents qualifiés',
-        description:
-          'Des ingénieurs seniors expérimentés en React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL et intégrations cloud.',
-      },
-      ethic: {
-        title: 'Éthique professionnelle',
-        description:
-          'Transparence, implication, responsabilité et exigence élevée en matière de communication.',
-      },
-      business: {
-        title: 'Vision business',
-        description:
-          'Nous allons au-delà du code\u00a0: produit, monétisation, évolutivité et ROI font partie du processus.',
-      },
     },
   },
   process: {
     eyebrow: 'Notre processus',
     title: 'Développement de bout en bout',
-    subtitle: "Une méthodologie éprouvée qui mène votre produit de l'idée au lancement",
+    subtitle: 'Comment un projet passe du premier appel à la mise en production.',
     step: 'Étape {{number}}',
     steps: {
       discovery: {
@@ -154,29 +121,19 @@ export default {
       "Ventura Software est un studio d'ingénierie boutique qui conçoit des produits numériques fiables, évolutifs et de grande qualité. Nous aidons les entreprises à développer et renforcer leurs capacités produit grâce à une expertise d'ingénierie senior.",
   },
   contact: {
-    title: 'Construisons ensemble quelque chose de grand.',
-    body:
-      'Prêt à lancer votre projet\u00a0? Contactez-nous et voyons ensemble comment nous pouvons vous aider à atteindre vos objectifs.',
+    title: 'Dites-nous ce dont vous avez besoin.',
+    body: 'Réservez un appel de 30\u00a0minutes, écrivez-nous par e-mail ou sur WhatsApp. Ou utilisez le formulaire.',
     email: 'E-mail',
     phone: 'Téléphone',
     location: 'Localisation',
+    bookCall: 'Réserver un appel de 30\u00a0min',
+    privacyNotice: 'Nous utilisons vos données uniquement pour vous répondre. Le formulaire est transmis via EmailJS.',
+    privacyLink: 'Politique de confidentialité',
     form: {
       name: 'Nom',
       namePlaceholder: 'Jean Dupont',
       email: 'E-mail',
       emailPlaceholder: 'jean@entreprise.com',
-      company: 'Entreprise',
-      companyPlaceholder: 'Votre entreprise',
-      projectType: 'Type de projet',
-      projectTypePlaceholder: 'Sélectionnez un type de projet',
-      projectTypes: {
-        web: 'Développement web',
-        mobile: 'Développement mobile',
-        backend: 'Backend et API',
-        design: 'Design UX/UI',
-        full: 'Produit de bout en bout',
-        other: 'Autre',
-      },
       message: 'Message',
       messagePlaceholder: 'Parlez-nous de votre projet...',
       maxChars: '500 caractères maximum',

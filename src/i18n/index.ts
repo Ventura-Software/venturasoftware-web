@@ -20,6 +20,10 @@ export const LANGUAGE_STORAGE_KEY = 'i18nextLng';
 
 i18n.on('languageChanged', () => {
   document.documentElement.lang = i18n.resolvedLanguage || 'en';
+  document.title = i18n.t('meta.title');
+  document
+    .querySelector('meta[name="description"]')
+    ?.setAttribute('content', i18n.t('meta.description'));
 });
 
 i18n
@@ -50,6 +54,11 @@ export function setLanguage(code: string) {
   } catch {
     // storage unavailable (private mode, blocked site data)
   }
+  // Keep ?lang= in the address bar so the current URL can be shared in the
+  // chosen language (the detector reads the query string first).
+  const url = new URL(window.location.href);
+  url.searchParams.set('lang', code);
+  window.history.replaceState(window.history.state, '', url);
   i18n.changeLanguage(code);
 }
 

@@ -13,8 +13,7 @@ export default {
   },
   hero: {
     tagline: 'End-to-End Software Engineering',
-    subtitle:
-      'We design, build and scale high-quality digital products with a senior engineering team focused on clarity, reliability and excellent execution.',
+    subtitle: 'A software studio in Montevideo, Uruguay. We build mobile apps and the platforms behind them, from first version to production.',
     ourServices: 'Our Services',
   },
   trustedBy: {
@@ -25,11 +24,6 @@ export default {
     title: 'What We Build',
     subtitle: 'Comprehensive software solutions tailored to your business needs',
     items: {
-      product: {
-        title: 'End-to-End Product Development',
-        description: 'From initial concept to successful launch and beyond.',
-        tags: ['Strategy', 'Design', 'Development', 'Launch'],
-      },
       web: {
         title: 'Custom Web Applications',
         description:
@@ -40,18 +34,6 @@ export default {
         title: 'Mobile Applications',
         description: 'High-performance cross-platform apps using React Native.',
         tags: ['React Native', 'iOS', 'Android', 'Cross-platform'],
-      },
-      ai: {
-        title: 'AI-Enhanced Features',
-        description:
-          'OpenAI, embeddings and vector databases to improve search, automation and user experience.',
-        tags: ['OpenAI', 'Embeddings', 'Vector DB', 'Automation'],
-      },
-      saas: {
-        title: 'SaaS Platform Development',
-        description:
-          'End-to-end SaaS architecture: authentication, subscriptions, payments, analytics, user roles and scalable infrastructure.',
-        tags: ['Authentication', 'Subscriptions', 'Payments', 'Analytics'],
       },
       integrations: {
         title: 'API & System Integrations',
@@ -65,9 +47,9 @@ export default {
     title: 'Why Work With Ventura Software',
     items: {
       bilingual: {
-        title: 'Bilingual Team',
+        title: 'We work in English and Spanish',
         description:
-          'Clear, fluent communication in English and Spanish for smooth collaboration.',
+          'Meetings, documentation and day-to-day communication in whichever of the two your team prefers. Spanish is our native language.',
       },
       meet: {
         title: 'Meet Your Developer',
@@ -84,27 +66,12 @@ export default {
         description:
           'Stable long-term team that reduces onboarding overhead and ensures continuity.',
       },
-      talent: {
-        title: 'Qualified Talent Pool',
-        description:
-          'Senior engineers experienced in React, Next.js, React Native, Node.js, NestJS, TypeScript, PostgreSQL and cloud integrations.',
-      },
-      ethic: {
-        title: 'Professional Work Ethic',
-        description:
-          'Transparency, ownership, accountability and high communication standards.',
-      },
-      business: {
-        title: 'Business Mindset',
-        description:
-          'We think beyond code: product, monetization, scalability and ROI are part of the process.',
-      },
     },
   },
   process: {
     eyebrow: 'Our Process',
     title: 'End-to-End Development',
-    subtitle: 'A proven methodology that takes your product from concept to launch',
+    subtitle: 'How a project goes from the first call to production.',
     step: 'Step {{number}}',
     steps: {
       discovery: {
@@ -153,29 +120,19 @@ export default {
       'Ventura Software is a boutique engineering studio focused on delivering reliable, scalable and high-quality digital products. We help companies expand and strengthen their product capabilities through senior engineering expertise.',
   },
   contact: {
-    title: "Let's build something great together.",
-    body:
-      "Ready to start your project? Get in touch and let's discuss how we can help you achieve your goals.",
+    title: 'Tell us what you need.',
+    body: 'Book a 30-minute call, email us or send a WhatsApp message. Or use the form.',
     email: 'Email',
     phone: 'Phone',
     location: 'Location',
+    bookCall: 'Book a 30-min call',
+    privacyNotice: 'We use your data only to reply to you. The form is delivered via EmailJS.',
+    privacyLink: 'Privacy policy',
     form: {
       name: 'Name',
       namePlaceholder: 'John Doe',
       email: 'Email',
       emailPlaceholder: 'john@company.com',
-      company: 'Company',
-      companyPlaceholder: 'Your Company',
-      projectType: 'Project Type',
-      projectTypePlaceholder: 'Select a project type',
-      projectTypes: {
-        web: 'Web Development',
-        mobile: 'Mobile Development',
-        backend: 'Backend & APIs',
-        design: 'UX/UI Design',
-        full: 'End-to-End Product',
-        other: 'Other',
-      },
       message: 'Message',
       messagePlaceholder: 'Tell us about your project...',
       maxChars: 'Maximum 500 characters',
