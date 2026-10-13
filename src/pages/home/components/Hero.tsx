@@ -1,115 +1,74 @@
 import { useTranslation } from "react-i18next";
+import ConstellationCanvas from "@/components/fx/ConstellationCanvas";
+import { SplitWords } from "@/components/fx/Reveal";
+import { MagneticButton, MagneticLink } from "@/components/fx/Interactive";
+import { CALENDLY_URL } from "@/config/contact";
 
 export default function Hero() {
   const { t } = useTranslation();
+
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
-          }}
-        ></div>
-      </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+      {/* Background layers */}
+      <div className="absolute inset-0 grid-pan opacity-60" />
+      <div className="aurora w-[38rem] h-[38rem] -top-40 -left-40 bg-cyan-500/40" />
       <div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      ></div>
-
-      {/* Dark Overlay for Better Text Contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-slate-900/20 to-slate-900/30"></div>
+        className="aurora w-[34rem] h-[34rem] top-1/3 -right-48 bg-violet-600/40"
+        style={{ animationDelay: "-6s" }}
+      />
+      <div
+        className="aurora w-[30rem] h-[30rem] -bottom-48 left-1/4 bg-blue-600/40"
+        style={{ animationDelay: "-12s" }}
+      />
+      <ConstellationCanvas className="absolute inset-0 w-full h-full" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(2,6,23,0.85)_80%)] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center">
-        {/* Badge */}
-        {/* <div className="inline-flex items-center px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 backdrop-blur-sm mb-8 animate-fade-in">
-          <span className="text-cyan-400 text-sm font-medium">
-            Trusted by 50+ companies worldwide
-          </span>
-        </div> */}
-
-        {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
-          Ventura Software
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pt-24 text-center">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
+          <SplitWords text="Ventura Software" />
           <br />
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            {t("hero.tagline")}
-          </span>
+          <SplitWords
+            text={t("hero.tagline")}
+            wordClassName="text-shimmer pb-[0.08em]"
+            baseDelay={250}
+          />
         </h1>
 
-        {/* Subheadline */}
         <p
-          className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up"
-          style={{ animationDelay: "0.2s" }}
+          className="fade-up text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed"
+          style={{ animationDelay: "0.7s" }}
         >
           {t("hero.subtitle")}
         </p>
 
-        {/* CTA Buttons */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up"
-          style={{ animationDelay: "0.4s" }}
+          className="fade-up flex flex-col sm:flex-row items-center justify-center gap-4"
+          style={{ animationDelay: "0.9s" }}
         >
-          <a
-            href="https://calendly.com/juanpadin7/30min"
+          <MagneticLink
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-200 shadow-2xl cursor-pointer whitespace-nowrap inline-block text-center"
+            className="btn-shine group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 bg-[length:200%_auto] hover:bg-right text-white font-semibold rounded-full shadow-[0_0_40px_-8px_rgba(34,211,238,0.7)] transition-[background-position,box-shadow] duration-500 hover:shadow-[0_0_60px_-6px_rgba(34,211,238,0.9)] whitespace-nowrap"
           >
-            {t("nav.getInTouch")}
-          </a>
-          <button
+            <i className="ri-calendar-event-line text-lg" />
+            {t("contact.bookCall")}
+            <i className="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-1" />
+          </MagneticLink>
+          <MagneticButton
             onClick={() => scrollToSection("services")}
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer whitespace-nowrap"
+            className="w-full sm:w-auto px-8 py-4 bg-white/5 backdrop-blur-md border border-white/15 text-white font-semibold rounded-full hover:bg-white/10 hover:border-cyan-400/50 transition-colors duration-300 cursor-pointer whitespace-nowrap"
           >
             {t("hero.ourServices")}
-          </button>
+          </MagneticButton>
         </div>
       </div>
 
-      <style>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-in {
-          animation: fade-in 0.8s ease-out forwards;
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-        }
-      `}</style>
     </section>
   );
 }

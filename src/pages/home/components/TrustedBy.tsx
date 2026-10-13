@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import Reveal from "@/components/fx/Reveal";
 import waloPilatesImg from "@/assets/images/walo-pilates.png";
 import bethelSpaImg from "@/assets/images/bethel-spa.png";
 import aypSoftImg from "@/assets/images/ayp-soft.png";
@@ -102,11 +103,11 @@ export default function TrustedBy() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold text-slate-500 tracking-widest uppercase mb-12">
+        <Reveal as="p" variant="blur" className="text-center text-xs font-semibold text-slate-500 tracking-[0.3em] uppercase mb-12">
           {t("trustedBy.title")}
-        </p>
+        </Reveal>
 
-        <div className="carousel-wrapper">
+        <Reveal variant="up" delay={150} className="carousel-wrapper">
           <div className="carousel-track">
             {allPartners.map((partner, index) => (
               <a
@@ -114,18 +115,18 @@ export default function TrustedBy() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center h-32 px-6 transition-all duration-300 hover:scale-110 flex-shrink-0"
+                className="group flex items-center justify-center h-32 px-6 transition-all duration-300 hover:scale-110 flex-shrink-0"
                 style={{ width: `${partner.width}px` }}
               >
                 <img
                   src={partner.image}
                   alt={partner.name}
-                  className="max-w-full max-h-full object-contain"
+                  className="max-w-full max-h-full object-contain transition-all duration-500 [@media(hover:hover)]:grayscale [@media(hover:hover)]:opacity-60 group-hover:grayscale-0 group-hover:opacity-100"
                 />
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
