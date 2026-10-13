@@ -85,8 +85,47 @@
       }
     </script>
   </head>
-  <body>
+  <body style="background:#0f172a">
     <div id="root"></div>
+    <!-- TEMP mobile white-screen diagnostics: remove before merging -->
+    <script>
+      (function () {
+        var q = new URLSearchParams(location.search);
+        if (q.has("nofx")) document.documentElement.classList.add("nofx");
+        var log = [];
+        function show() {
+          var box = document.getElementById("diag-box");
+          if (!box) {
+            box = document.createElement("pre");
+            box.id = "diag-box";
+            box.style.cssText =
+              "position:fixed;left:0;right:0;bottom:0;z-index:99999;max-height:50vh;overflow:auto;margin:0;padding:8px;background:#fff;color:#b00;font:11px/1.35 monospace;white-space:pre-wrap;border-top:3px solid #b00";
+            document.body.appendChild(box);
+          }
+          box.textContent = log.join("\n");
+        }
+        function add(m) { log.push(m); if (document.body) show(); }
+        window.addEventListener("error", function (e) {
+          var t = e.target;
+          if (t && t !== window && (t.src || t.href)) add("LOAD FAIL: " + (t.src || t.href));
+          else add("ERROR: " + e.message + " @ " + (e.filename || "") + ":" + e.lineno + ":" + e.colno + (e.error && e.error.stack ? "\n" + e.error.stack : ""));
+        }, true);
+        window.addEventListener("unhandledrejection", function (e) {
+          var r = e.reason;
+          add("REJECTION: " + (r && (r.stack || r.message) || r));
+        });
+        setTimeout(function () {
+          var root = document.getElementById("root");
+          add("REPORT " + new Date().toISOString().slice(11, 19) +
+            " | rootChildren=" + root.children.length +
+            " htmlLen=" + root.innerHTML.length +
+            " nofx=" + q.has("nofx") +
+            " vw=" + innerWidth + "x" + innerHeight +
+            " dpr=" + devicePixelRatio +
+            "\nUA=" + navigator.userAgent);
+        }, 4000);
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
