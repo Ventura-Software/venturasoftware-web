@@ -606,6 +606,16 @@
   resolved "https://registry.npmjs.org/@firebase/webchannel-wrapper/-/webchannel-wrapper-1.0.4.tgz"
   integrity sha512-6m8+P+dE/RPl4OPzjTxcTbQ0rGeRyeTvAi9KwIffBVCiAMKrfXfLZaqD1F+m8t4B5/Q5aHsMozOgirkH1F5oMQ==
 
+"@fontsource-variable/inter@5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.2.5.tgz#10f44952c460d8145fd9eac7133e0012ca17d252"
+  integrity sha512-TrWffUAFOnT8zroE9YmGybagoOgM/HjRqMQ8k9R0vVgXlnUh/vnpbGPAS/Caz1KIlOPnPGh6fvJbb7DHbFCncA==
+
+"@fontsource/space-grotesk@5.2.6":
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/space-grotesk/-/space-grotesk-5.2.6.tgz#f9a7fefc421f5d5b198594bc2dc214784a7ffbc9"
+  integrity sha512-Ejf50hUdoWYFkVdqckXxXuIY3tPgQZ/095EHa21uLBOuk7CQAlxqSdkPu5y47Xv+xa8A4TSrdAJlS9YdF5DqGg==
+
 "@grpc/grpc-js@~1.9.0":
   version "1.9.15"
   resolved "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.9.15.tgz"
@@ -2505,6 +2515,11 @@ redux@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/redux/-/redux-5.0.1.tgz"
   integrity sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==
+
+remixicon@4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/remixicon/-/remixicon-4.6.0.tgz#f2adafd18aaa983d61f8c9f7274fa17706da4ddc"
+  integrity sha512-bKM5odjqE1yzVxEZGJE7F79WHhNrJFIKHXR+GG+P1IWXn8AnJZhl8SbIRDJsNAvIqx4VPkNwjuHfc42tutMDpQ==
 
 require-directory@^2.1.1:
   version "2.1.1"
