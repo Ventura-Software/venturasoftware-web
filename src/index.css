@@ -314,6 +314,43 @@ html {
   transform-origin: left;
 }
 
+/* Mobile: cheaper entrance motion so the first paint isn't stuck on blurred,
+   opacity-0 hero/section content while the main thread catches up. */
+@media (max-width: 768px) {
+  [data-reveal] {
+    transition-duration: 0.45s;
+    will-change: auto;
+  }
+  [data-reveal="blur"] {
+    filter: none;
+    transform: translateY(12px);
+  }
+  .split-word {
+    filter: none;
+    transform: translateY(0.25em);
+    animation-duration: 0.55s;
+  }
+  .split-word.text-shimmer {
+    animation:
+      word-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+      shimmer 6s linear infinite;
+  }
+  .fade-up {
+    animation-duration: 0.55s;
+  }
+  .aurora {
+    filter: blur(48px);
+    opacity: 0.4;
+    animation: none;
+  }
+  .grid-pan {
+    animation: none;
+  }
+  .btn-shine::after {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-reveal],

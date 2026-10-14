@@ -12,43 +12,44 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-slate-950">
       {/* Background layers */}
       <div className="absolute inset-0 grid-pan opacity-60" />
       <div className="aurora w-[38rem] h-[38rem] -top-40 -left-40 bg-cyan-500/40" />
       <div
-        className="aurora w-[34rem] h-[34rem] top-1/3 -right-48 bg-violet-600/40"
+        className="aurora hidden sm:block w-[34rem] h-[34rem] top-1/3 -right-48 bg-violet-600/40"
         style={{ animationDelay: "-6s" }}
       />
       <div
-        className="aurora w-[30rem] h-[30rem] -bottom-48 left-1/4 bg-blue-600/40"
+        className="aurora hidden md:block w-[30rem] h-[30rem] -bottom-48 left-1/4 bg-blue-600/40"
         style={{ animationDelay: "-12s" }}
       />
       <ConstellationCanvas className="absolute inset-0 w-full h-full" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(2,6,23,0.85)_80%)] pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pt-24 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pt-24 pb-16 text-center">
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
           <SplitWords text="Ventura Software" />
           <br />
           <SplitWords
             text={t("hero.tagline")}
             wordClassName="text-shimmer pb-[0.08em]"
-            baseDelay={250}
+            baseDelay={120}
+            step={40}
           />
         </h1>
 
         <p
           className="fade-up text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed"
-          style={{ animationDelay: "0.7s" }}
+          style={{ animationDelay: "0.35s" }}
         >
           {t("hero.subtitle")}
         </p>
 
         <div
           className="fade-up flex flex-col sm:flex-row items-center justify-center gap-4"
-          style={{ animationDelay: "0.9s" }}
+          style={{ animationDelay: "0.45s" }}
         >
           <MagneticLink
             href={CALENDLY_URL}
