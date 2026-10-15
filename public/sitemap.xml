@@ -4,33 +4,18 @@
     <loc>https://venturasoftware.dev/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://venturasoftware.dev/?lang=en" />
     <xhtml:link rel="alternate" hreflang="es" href="https://venturasoftware.dev/?lang=es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://venturasoftware.dev/?lang=pt" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://venturasoftware.dev/?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://venturasoftware.dev/?lang=de" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://venturasoftware.dev/?lang=it" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://venturasoftware.dev/?lang=sv" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://venturasoftware.dev/" />
   </url>
   <url>
     <loc>https://venturasoftware.dev/portfolio</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://venturasoftware.dev/portfolio?lang=en" />
     <xhtml:link rel="alternate" hreflang="es" href="https://venturasoftware.dev/portfolio?lang=es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://venturasoftware.dev/portfolio?lang=pt" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://venturasoftware.dev/portfolio?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://venturasoftware.dev/portfolio?lang=de" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://venturasoftware.dev/portfolio?lang=it" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://venturasoftware.dev/portfolio?lang=sv" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://venturasoftware.dev/portfolio" />
   </url>
   <url>
     <loc>https://venturasoftware.dev/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://venturasoftware.dev/privacy?lang=en" />
     <xhtml:link rel="alternate" hreflang="es" href="https://venturasoftware.dev/privacy?lang=es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://venturasoftware.dev/privacy?lang=pt" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://venturasoftware.dev/privacy?lang=fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://venturasoftware.dev/privacy?lang=de" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://venturasoftware.dev/privacy?lang=it" />
-    <xhtml:link rel="alternate" hreflang="sv" href="https://venturasoftware.dev/privacy?lang=sv" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://venturasoftware.dev/privacy" />
   </url>
 </urlset>

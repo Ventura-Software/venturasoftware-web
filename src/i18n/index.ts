@@ -6,11 +6,6 @@ import messages from './local/index';
 export const LANGUAGES = [
   { code: 'en', label: 'English' },
   { code: 'es', label: 'Español' },
-  { code: 'pt', label: 'Português' },
-  { code: 'fr', label: 'Français' },
-  { code: 'de', label: 'Deutsch' },
-  { code: 'it', label: 'Italiano' },
-  { code: 'sv', label: 'Svenska' },
 ] as const;
 
 // Key under which an explicit choice from the language switcher is stored.
@@ -32,7 +27,7 @@ i18n
   .init({
     resources: messages,
     supportedLngs: LANGUAGES.map((l) => l.code),
-    // Map regional variants (es-AR, pt-BR, fr-CA, de-AT, …) to the base language
+    // Map regional variants (es-AR, es-UY, en-GB, …) to the base language
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     fallbackLng: 'en',
