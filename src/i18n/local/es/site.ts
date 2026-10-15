@@ -2,7 +2,7 @@ export default {
   meta: {
     title: 'Ventura Software | Apps móviles y plataformas, hechas en Montevideo',
     description:
-      'Un estudio de software en Montevideo, Uruguay. Construimos apps móviles y las plataformas que las sostienen, desde la primera versión hasta producción.',
+      'Un estudio de software en Montevideo, Uruguay. Construimos apps móviles y las plataformas que las sostienen, desde la primera versión hasta producción. Desde 2023.',
   },
   howWeWork: {
     eyebrow: 'Cómo trabajamos',
@@ -10,6 +10,20 @@ export default {
     body:
       'Montevideo está en UTC-3 todo el año, sin horario de verano. Son 1 a 2 horas más que en la costa este de EE. UU., y nuestras mañanas coinciden con las tardes de Europa central.',
     languages: 'Trabajamos en español e inglés.',
+    engagement: {
+      start: {
+        title: 'Arrancamos con una llamada',
+        body: 'Una llamada gratis de 30 minutos para entender qué necesitás. Después te mandamos una propuesta con alcance, plazos y precio.',
+      },
+      models: {
+        title: 'Dos formas de trabajar',
+        body: 'Construimos el producto completo de punta a punta, o sumamos ingenieros dedicados a tu equipo. Podés conocerlos antes de arrancar.',
+      },
+      cadence: {
+        title: 'Avances a tu medida',
+        body: 'Acordamos con cada cliente cada cuánto mostrar avances: demos, updates por escrito o un canal compartido.',
+      },
+    },
     you: 'Tu hora',
     overlap: '{{count}} h en común',
     legend: 'Las barras marcan de 9:00 a 18:00, hora local de cada ciudad',

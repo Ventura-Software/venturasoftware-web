@@ -2,6 +2,13 @@ import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Reveal from "@/components/fx/Reveal";
 import { useNow } from "@/components/fx/hooks";
+import { SpotlightCard } from "@/components/fx/Interactive";
+
+const ENGAGEMENT = [
+  { id: "start", icon: "ri-phone-line" },
+  { id: "models", icon: "ri-git-branch-line" },
+  { id: "cadence", icon: "ri-calendar-check-line" },
+];
 
 const HOME_TZ = "America/Montevideo";
 const OFFICE_START = 9;
@@ -252,6 +259,27 @@ export default function HowWeWork() {
             </p>
           </div>
         </Reveal>
+      </div>
+
+      {/* How an engagement works */}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
+        {ENGAGEMENT.map((item, index) => (
+          <Reveal key={item.id} delay={index * 120} variant="up">
+            <SpotlightCard className="group h-full p-7 rounded-2xl bg-slate-900/70 border border-white/[0.07] backdrop-blur-sm hover:shadow-[0_30px_80px_-30px_rgba(34,211,238,0.45)]">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white transition-transform duration-500 group-hover:rotate-[-8deg] group-hover:scale-110">
+                  <i className={`${item.icon} text-lg`} />
+                </span>
+                <h3 className="text-lg font-bold text-white">
+                  {t(`howWeWork.engagement.${item.id}.title`)}
+                </h3>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                {t(`howWeWork.engagement.${item.id}.body`)}
+              </p>
+            </SpotlightCard>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

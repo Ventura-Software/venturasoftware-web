@@ -2,7 +2,7 @@ export default {
   meta: {
     title: 'Ventura Software | Mobile apps and platforms, built in Montevideo',
     description:
-      'A software studio in Montevideo, Uruguay. We build mobile apps and the platforms behind them, from first version to production.',
+      'A software studio in Montevideo, Uruguay. We build mobile apps and the platforms behind them, from first version to production. Since 2023.',
   },
   howWeWork: {
     eyebrow: 'How we work',
@@ -10,6 +10,20 @@ export default {
     body:
       'Montevideo is UTC-3 all year, with no daylight saving time. That is 1 to 2 hours ahead of US Eastern, and our mornings overlap with Central European afternoons.',
     languages: 'We work in English and Spanish.',
+    engagement: {
+      start: {
+        title: 'It starts with a call',
+        body: 'A free 30-minute call to understand what you need. Then we send you a proposal with scope, timeline and price.',
+      },
+      models: {
+        title: 'Two ways to work together',
+        body: 'We build the whole product end to end, or we add dedicated engineers to your team. You can meet them before they start.',
+      },
+      cadence: {
+        title: 'Updates on your terms',
+        body: 'We agree with each client how often to show progress: demos, written updates or a shared channel.',
+      },
+    },
     you: 'Your time',
     overlap: '{{count}} h overlap',
     legend: 'Bars show 9:00 to 18:00 local time in each city',

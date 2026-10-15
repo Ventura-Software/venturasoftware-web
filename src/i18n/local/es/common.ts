@@ -13,7 +13,7 @@ export default {
   },
   hero: {
     tagline: 'Ingeniería de software de punta a punta',
-    subtitle: 'Un estudio de software en Montevideo, Uruguay. Construimos apps móviles y las plataformas que las sostienen, desde la primera versión hasta producción.',
+    subtitle: 'Un estudio de software en Montevideo, Uruguay. Construimos apps móviles y las plataformas que las sostienen, desde la primera versión hasta producción. Desde 2023.',
     ourServices: 'Nuestros servicios',
   },
   trustedBy: {
@@ -114,7 +114,7 @@ export default {
       'Ventura Software es un estudio boutique de ingeniería enfocado en entregar productos digitales confiables, escalables y de alta calidad. Ayudamos a las empresas a ampliar y fortalecer sus capacidades de producto con experiencia de ingeniería senior.',
   },
   contact: {
-    title: 'Contanos qué necesitás.',
+    title: 'Contanos qué necesitás. Respondemos en menos de 24 horas.',
     body: 'Agendá una llamada de 30 minutos, escribinos por email o por WhatsApp. O usá el formulario.',
     email: 'Email',
     phone: 'Teléfono',

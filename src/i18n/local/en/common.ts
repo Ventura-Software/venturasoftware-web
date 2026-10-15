@@ -13,7 +13,7 @@ export default {
   },
   hero: {
     tagline: 'End-to-End Software Engineering',
-    subtitle: 'A software studio in Montevideo, Uruguay. We build mobile apps and the platforms behind them, from first version to production.',
+    subtitle: 'A software studio in Montevideo, Uruguay. We build mobile apps and the platforms behind them, from first version to production. Since 2023.',
     ourServices: 'Our Services',
   },
   trustedBy: {
@@ -114,7 +114,7 @@ export default {
       'Ventura Software is a boutique engineering studio focused on delivering reliable, scalable and high-quality digital products. We help companies expand and strengthen their product capabilities through senior engineering expertise.',
   },
   contact: {
-    title: 'Tell us what you need.',
+    title: 'Tell us what you need. We reply within 24 hours.',
     body: 'Book a 30-minute call, email us or send a WhatsApp message. Or use the form.',
     email: 'Email',
     phone: 'Phone',

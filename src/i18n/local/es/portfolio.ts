@@ -69,9 +69,9 @@ export default {
     },
     tickettwist: {
       text1:
-        'TicketTwist es una plataforma segura y confiable para comprar y vender entradas para eventos. Ofrece un entorno de confianza para las transacciones, con medidas de seguridad integradas que protegen a los usuarios durante todo el proceso de compra y venta.',
+        'TicketTwist es una app de reventa de entradas para conciertos, deportes, festivales, teatro, boliches y más. Quien vende sube la entrada desde su galería o el PDF original y elige el precio; cuando alguien la compra, cobra al instante. Al comprarla, la entrada original se invalida y el comprador recibe una entrada nueva y única, así la misma entrada nunca se vende dos veces.',
       text2:
-        'Ventura lideró el equipo y participó en cada etapa del desarrollo y lanzamiento de TicketTwist. Con Expo React Native para móvil y Node.js para el backend, supervisamos el proyecto de punta a punta, asegurando una experiencia de usuario fluida y una seguridad robusta.',
+        'Ventura lideró el equipo y participó en cada etapa del desarrollo y lanzamiento de TicketTwist: las apps para iOS y Android hechas con Expo React Native y el backend en Node.js que maneja publicaciones, pagos y la reemisión de entradas.',
     },
   },
 };

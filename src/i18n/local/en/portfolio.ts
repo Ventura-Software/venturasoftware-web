@@ -69,9 +69,9 @@ export default {
     },
     tickettwist: {
       text1:
-        'TicketTwist is a secure and reliable platform for buying and selling event tickets. The platform provides a trusted environment for ticket transactions with built-in security measures to protect users during the buying and selling process.',
+        "TicketTwist is a ticket resale app for concerts, sports, festivals, theatre, clubs and more. Sellers upload a ticket from their photo gallery or the original PDF and set a price; when someone buys it, the seller gets paid instantly. At purchase the original ticket is invalidated and the buyer receives a brand-new, unique one, so the same ticket can never be sold twice.",
       text2:
-        "Ventura led the team and participated in every stage of TicketTwist's development and launch. Using Expo React Native for mobile and Node.js for the backend, we oversaw the project end-to-end, ensuring a seamless user experience and robust security.",
+        "Ventura led the team and took part in every stage of TicketTwist's development and launch: the iOS and Android apps built with Expo React Native, and the Node.js backend behind publishing, payments and ticket reissuing.",
     },
   },
 };
