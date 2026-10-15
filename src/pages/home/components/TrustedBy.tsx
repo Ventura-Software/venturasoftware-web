@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Reveal from "@/components/fx/Reveal";
 import waloPilatesImg from "@/assets/images/walo-pilates.png";
-import bethelSpaImg from "@/assets/images/bethel-spa.png";
+import bethelFitnessImg from "@/assets/images/bethel-fitness.png";
 import aypSoftImg from "@/assets/images/ayp-soft.png";
 import petrovicSolutionsImg from "@/assets/images/petrovic-solutions.png";
 import tuViandaImg from "@/assets/images/tu-vianda.png";
@@ -23,9 +23,9 @@ export default function TrustedBy() {
       url: "https://petrovicsolutions.com/",
     },
     {
-      name: "Bethel Spa",
+      name: "Bethel Fitness",
       width: 200,
-      image: bethelSpaImg,
+      image: bethelFitnessImg,
       url: "https://bethelspa.com/",
     },
     {

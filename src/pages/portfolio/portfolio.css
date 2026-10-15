@@ -745,3 +745,39 @@
     transition: none;
   }
 }
+
+/* ===== Website + store links ===== */
+.portfolio-project .links,
+.portfolio-pdf-root .links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.portfolio-project .links {
+  gap: 14px 22px;
+  margin-top: 32px;
+}
+.portfolio-pdf-root .links {
+  gap: 8px 14px;
+  margin-top: 18px;
+}
+.portfolio-project .links .link,
+.portfolio-pdf-root .links .link {
+  margin-top: 0;
+}
+.portfolio-project .store-link,
+.portfolio-pdf-root .store-link {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.portfolio-pdf-root .store-link {
+  padding: 3px 9px;
+}
+.portfolio-project .store-link {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+.portfolio-project .store-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+}

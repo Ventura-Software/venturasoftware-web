@@ -2,7 +2,8 @@ import { forwardRef } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { PROJECTS, type Project } from "../data";
 import DeviceStage from "./DeviceStage";
-import { LinkIcon, TypeBadge } from "./icons";
+import { TypeBadge } from "./icons";
+import ProjectLinks from "./ProjectLinks";
 
 function PdfProjectCard({ project }: { project: Project }) {
   const { t } = useTranslation();
@@ -34,16 +35,7 @@ function PdfProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-        {project.linkHref && (
-          <a
-            className="link"
-            href={project.linkHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.link} <LinkIcon />
-          </a>
-        )}
+        <ProjectLinks project={project} />
       </div>
     </div>
   );

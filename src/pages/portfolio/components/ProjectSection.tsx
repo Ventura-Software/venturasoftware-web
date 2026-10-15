@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useInView } from "@/components/fx/hooks";
 import type { Project } from "../data";
 import DeviceStage from "./DeviceStage";
-import { LinkIcon, TypeBadge } from "./icons";
+import { TypeBadge } from "./icons";
+import ProjectLinks from "./ProjectLinks";
 
 interface Props {
   project: Project;
@@ -42,17 +43,7 @@ export default function ProjectSection({ project }: Props) {
             </span>
           ))}
         </div>
-        {project.linkHref && (
-          <a
-            className="link"
-            style={step(6)}
-            href={project.linkHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.link} <LinkIcon />
-          </a>
-        )}
+        <ProjectLinks project={project} style={step(6)} />
       </div>
     </section>
   );

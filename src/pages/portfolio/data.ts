@@ -26,6 +26,7 @@ export interface Project {
   secondaryColor: string;
   tech: string[];
   screens?: Screen[];
+  stores?: { appStore?: string; googlePlay?: string };
 }
 
 export const PROJECTS: Project[] = [
@@ -36,6 +37,10 @@ export const PROJECTS: Project[] = [
     year: "2025 — Present",
     link: "walopilates.com.uy",
     linkHref: "https://walopilates.com.uy/",
+    stores: {
+      appStore: "https://apps.apple.com/uy/app/walo-pilates/id6755045839",
+      googlePlay: "https://play.google.com/store/apps/details?id=com.walo.mobile",
+    },
     color: "#452318",
     secondaryColor: "#7a3b27",
     tech: [
@@ -63,6 +68,10 @@ export const PROJECTS: Project[] = [
     year: "2023 — Present",
     link: "bethelspa.com",
     linkHref: "https://bethelspa.com/",
+    stores: {
+      appStore: "https://apps.apple.com/uy/app/bethel-fitness/id6758575125",
+      googlePlay: "https://play.google.com/store/apps/details?id=com.bethel.mobile",
+    },
     color: "#1f3d80",
     secondaryColor: "#16285a",
     tech: [
