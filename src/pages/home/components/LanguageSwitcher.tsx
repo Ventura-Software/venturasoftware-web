@@ -35,7 +35,7 @@ export default function LanguageSwitcher({ scrolled }: LanguageSwitcherProps) {
           aria-checked={lang.code === current}
           aria-label={lang.label}
           onClick={() => setLanguage(lang.code)}
-          className={`relative z-10 px-3 py-1 rounded-full cursor-pointer transition-colors ${
+          className={`relative z-10 px-3 py-1 rounded-full uppercase cursor-pointer transition-colors ${
             lang.code === current
               ? "text-white"
               : scrolled

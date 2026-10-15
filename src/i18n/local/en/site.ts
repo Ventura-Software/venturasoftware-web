@@ -35,6 +35,17 @@ export default {
       berlin: 'Berlin',
     },
   },
+  featured: {
+    eyebrow: 'Selected work',
+    title: 'Recent work',
+    subtitle: 'Three products we built end to end and keep running.',
+    seeAll: 'See all projects',
+    items: {
+      walo: 'Booking app and studio dashboard for a Pilates studio in Montevideo.',
+      bethel: 'Member app, staff admin and QR check-in for a multi-location gym.',
+      dmg: 'Lab information system that tracks every specimen from reception to signed report.',
+    },
+  },
   privacyPage: {
     eyebrow: 'Legal',
     title: 'Privacy policy',

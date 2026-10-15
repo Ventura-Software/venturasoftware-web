@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import TrustedBy from './components/TrustedBy';
 import Services from './components/Services';
 import WhyWorkWithUs from './components/WhyWorkWithUs';
+import FeaturedWork from './components/FeaturedWork';
 import HowWeWork from './components/HowWeWork';
 import Process from './components/Process';
 import Contact from './components/Contact';
@@ -29,6 +30,7 @@ export default function HomePage() {
       <Hero />
       <TrustedBy />
       <Services />
+      <FeaturedWork />
       <WhyWorkWithUs />
       <HowWeWork />
       <Process />

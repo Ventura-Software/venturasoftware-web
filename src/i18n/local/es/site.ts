@@ -35,6 +35,17 @@ export default {
       berlin: 'Berlín',
     },
   },
+  featured: {
+    eyebrow: 'Trabajos destacados',
+    title: 'Trabajos recientes',
+    subtitle: 'Tres productos que construimos de punta a punta y seguimos manteniendo.',
+    seeAll: 'Ver todos los proyectos',
+    items: {
+      walo: 'App de reservas y panel de gestión para un estudio de Pilates en Montevideo.',
+      bethel: 'App para socios, admin para el staff y check-in con QR para un gimnasio con varias sedes.',
+      dmg: 'Sistema de laboratorio que sigue cada muestra desde la recepción hasta el informe firmado.',
+    },
+  },
   privacyPage: {
     eyebrow: 'Legal',
     title: 'Política de privacidad',
